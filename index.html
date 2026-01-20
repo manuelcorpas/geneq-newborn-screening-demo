@@ -46,8 +46,8 @@
                 </div>
 
                 <div class="flex flex-wrap gap-4">
-                    <a href="#journey" onclick="showSection('journey')" class="px-6 py-3 bg-white text-blue-700 rounded-lg font-semibold hover:bg-blue-50 transition-colors">See the Implementation Journey</a>
-                    <a href="#typology" onclick="showSection('typology')" class="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors">Find Your Starting Point</a>
+                    <button onclick="showSection('journey')" class="px-6 py-3 bg-white text-blue-700 rounded-lg font-semibold hover:bg-blue-50 transition-colors cursor-pointer">See the Implementation Journey</button>
+                    <button onclick="showSection('typology')" class="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors cursor-pointer">Find Your Starting Point</button>
                 </div>
             </div>
         </div>
@@ -930,15 +930,20 @@
 
     <script>
         function showSection(sectionId) {
+            // Hide all sections
             document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+            // Show the target section
             document.getElementById(sectionId).classList.remove('hidden');
+            // Update nav styling - remove active from all
             document.querySelectorAll('.nav-link').forEach(n => {
-                n.classList.remove('active', 'bg-blue-600', 'text-white');
+                n.classList.remove('active');
             });
+            // Add active to the clicked nav
             const activeNav = document.querySelector(`[data-section="${sectionId}"]`);
             if (activeNav) {
                 activeNav.classList.add('active');
             }
+            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
