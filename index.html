@@ -141,44 +141,49 @@
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
                         <!-- Chart 1: Failure Rate -->
                         <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-                            <div class="h-40 flex items-end justify-center gap-4 mb-4">
+                            <div class="h-32 flex items-end justify-center gap-6 mb-3">
                                 <div class="text-center">
-                                    <div class="w-16 bg-green-500 rounded-t-lg" style="height: 40px;"></div>
-                                    <p class="text-xs mt-2 text-gray-500">With Pilot</p>
+                                    <div class="w-20 bg-green-500 rounded-t-lg flex items-end justify-center pb-1" style="height: 40px;">
+                                        <span class="text-white text-xs font-bold">1x</span>
+                                    </div>
+                                    <p class="text-xs mt-2 text-gray-700 font-medium">2-3 yr pilot</p>
                                 </div>
                                 <div class="text-center">
-                                    <div class="w-16 bg-red-500 rounded-t-lg" style="height: 120px;"></div>
-                                    <p class="text-xs mt-2 text-gray-500">No Pilot</p>
+                                    <div class="w-20 bg-red-500 rounded-t-lg flex items-end justify-center pb-1" style="height: 120px;">
+                                        <span class="text-white text-xs font-bold">3x</span>
+                                    </div>
+                                    <p class="text-xs mt-2 text-gray-700 font-medium">Skipped pilot</p>
                                 </div>
                             </div>
-                            <h4 class="font-bold text-gray-800 text-center">3x Higher Failure Rate</h4>
-                            <p class="text-xs text-gray-500 text-center mt-1">Protocol modifications post-launch when skipping pilot phase</p>
+                            <h4 class="font-bold text-gray-800 text-center">Protocol Modification Rate</h4>
+                            <p class="text-xs text-gray-500 text-center mt-2 leading-relaxed">"Failure" = major protocol changes post-launch (consent forms, lab workflows, reporting criteria). Not programme collapse, but costly rework that erodes stakeholder confidence.</p>
                         </div>
 
                         <!-- Chart 2: Knowledge Gaps -->
                         <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-                            <div class="h-40 flex flex-col justify-center">
-                                <div class="mb-2">
-                                    <div class="flex justify-between text-xs text-gray-500 mb-1">
-                                        <span>Provider Knowledge Gap</span>
-                                        <span class="font-bold text-red-600">40-60%</span>
+                            <div class="h-32 flex flex-col justify-center">
+                                <p class="text-xs text-gray-600 font-medium mb-2">Midwives, GPs & paediatricians tested on genomic NBS:</p>
+                                <div class="mb-3">
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span class="text-gray-700 font-medium">Before training</span>
+                                        <span class="font-bold text-red-600">40-60% knowledge gaps</span>
                                     </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-6">
-                                        <div class="bg-gradient-to-r from-red-400 to-red-600 h-6 rounded-full" style="width: 50%;"></div>
+                                    <div class="w-full bg-gray-200 rounded-full h-5">
+                                        <div class="bg-gradient-to-r from-red-400 to-red-600 h-5 rounded-full" style="width: 50%;"></div>
                                     </div>
                                 </div>
-                                <div class="mt-4">
-                                    <div class="flex justify-between text-xs text-gray-500 mb-1">
-                                        <span>After Training</span>
-                                        <span class="font-bold text-green-600">90%+ competent</span>
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span class="text-gray-700 font-medium">After targeted education</span>
+                                        <span class="font-bold text-green-600">90%+ competency</span>
                                     </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-6">
-                                        <div class="bg-gradient-to-r from-green-400 to-green-600 h-6 rounded-full" style="width: 90%;"></div>
+                                    <div class="w-full bg-gray-200 rounded-full h-5">
+                                        <div class="bg-gradient-to-r from-green-400 to-green-600 h-5 rounded-full" style="width: 90%;"></div>
                                     </div>
                                 </div>
                             </div>
-                            <h4 class="font-bold text-gray-800 text-center mt-4">Workforce is the Silent Killer</h4>
-                            <p class="text-xs text-gray-500 text-center mt-1">Training must precede launch by 18-24 months</p>
+                            <h4 class="font-bold text-gray-800 text-center mt-4">Workforce Readiness Gap</h4>
+                            <p class="text-xs text-gray-500 text-center mt-2 leading-relaxed">Training programmes take 18-24 months to develop and deliver. Start before your pilot, not after.</p>
                         </div>
 
                         <!-- Chart 3: Resource Drain -->
@@ -201,36 +206,38 @@
 
                         <!-- Chart 4: Counsellor Ratio -->
                         <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-                            <div class="h-40 flex items-center justify-center">
+                            <div class="h-32 flex items-center justify-center">
                                 <div class="text-center">
-                                    <div class="flex items-center justify-center gap-2 mb-2">
-                                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl">1</div>
-                                        <span class="text-3xl text-gray-400">:</span>
-                                        <div class="text-4xl font-bold text-gray-800">3,000</div>
+                                    <p class="text-xs text-gray-600 font-medium mb-3">Minimum genetic counsellors needed:</p>
+                                    <div class="flex items-center justify-center gap-2 mb-1">
+                                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white text-lg font-bold">1</div>
+                                        <span class="text-2xl text-gray-400">per</span>
+                                        <div class="text-3xl font-bold text-gray-800">3,000</div>
                                     </div>
-                                    <p class="text-sm text-gray-500">Counsellor to Births</p>
+                                    <p class="text-sm text-gray-600 font-medium">screened births annually</p>
                                 </div>
                             </div>
-                            <h4 class="font-bold text-gray-800 text-center">Critical Ratio Threshold</h4>
-                            <p class="text-xs text-gray-500 text-center mt-1">Below this ratio, wait times exceed 4 weeks and clinical utility is compromised</p>
+                            <h4 class="font-bold text-gray-800 text-center mt-3">Counselling Capacity Threshold</h4>
+                            <p class="text-xs text-gray-500 text-center mt-2 leading-relaxed">Below this ratio, appointment wait times exceed 4 weeks - negating the benefit of early detection.</p>
                         </div>
 
                         <!-- Chart 5: Cost Comparison -->
                         <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-                            <div class="h-40 flex items-end justify-center gap-6 mb-4">
+                            <p class="text-xs text-gray-600 font-medium mb-2 text-center">Per-test cost comparison:</p>
+                            <div class="h-28 flex items-end justify-center gap-8 mb-3">
                                 <div class="text-center">
-                                    <div class="w-12 bg-green-500 rounded-t-lg" style="height: 8px;"></div>
-                                    <p class="text-xs mt-2 text-gray-500">Heel-prick</p>
-                                    <p class="text-xs font-bold text-green-600">£0.59</p>
+                                    <div class="w-16 bg-green-500 rounded-t-lg" style="height: 8px;"></div>
+                                    <p class="text-xs mt-2 text-gray-700 font-medium">Traditional NBS</p>
+                                    <p class="text-sm font-bold text-green-600">£0.59</p>
                                 </div>
                                 <div class="text-center">
-                                    <div class="w-12 bg-red-500 rounded-t-lg" style="height: 120px;"></div>
-                                    <p class="text-xs mt-2 text-gray-500">WGS</p>
-                                    <p class="text-xs font-bold text-red-600">£1,050</p>
+                                    <div class="w-16 bg-amber-500 rounded-t-lg" style="height: 100px;"></div>
+                                    <p class="text-xs mt-2 text-gray-700 font-medium">WGS</p>
+                                    <p class="text-sm font-bold text-amber-600">£1,050</p>
                                 </div>
                             </div>
-                            <h4 class="font-bold text-gray-800 text-center">1,780x Cost Difference</h4>
-                            <p class="text-xs text-gray-500 text-center mt-1">No programme has demonstrated population-level cost-effectiveness yet</p>
+                            <h4 class="font-bold text-gray-800 text-center">Cost-Effectiveness Unknown</h4>
+                            <p class="text-xs text-gray-500 text-center mt-2 leading-relaxed">No programme has yet published QALY data proving net savings. This doesn't mean "don't proceed" - it means frame your business case around early diagnosis value, not cost savings.</p>
                         </div>
 
                         <!-- Chart 6: Global Programs -->
