@@ -3,351 +3,522 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GENEQ Global - Newborn Screening Intelligence</title>
+    <title>GENEQ Global - Newborn Screening Consultancy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%); }
-        .card { @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl; }
-        .nav-link { @apply px-4 py-2 rounded-lg transition-all duration-200 cursor-pointer; }
-        .nav-link:hover { @apply bg-white/10; }
-        .nav-link.active { @apply bg-white/20 font-semibold; }
-        .prose h1 { @apply text-2xl font-bold text-gray-800 mb-4 mt-6; }
-        .prose h2 { @apply text-xl font-semibold text-gray-700 mb-3 mt-5 border-b pb-2; }
-        .prose h3 { @apply text-lg font-medium text-gray-600 mb-2 mt-4; }
-        .prose p { @apply text-gray-600 mb-3 leading-relaxed; }
-        .prose ul { @apply list-disc list-inside mb-3 text-gray-600; }
+        .gradient-hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); }
+        .gradient-section { background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%); }
+        .card { @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100; }
+        .nav-link { @apply px-5 py-2 rounded-lg transition-all duration-200 cursor-pointer text-sm font-medium; }
+        .nav-link:hover { @apply bg-blue-50 text-blue-700; }
+        .nav-link.active { @apply bg-blue-600 text-white; }
+        .prose h2 { @apply text-xl font-bold text-gray-800 mb-4 mt-8 pb-2 border-b-2 border-blue-100; }
+        .prose h3 { @apply text-lg font-semibold text-gray-700 mb-3 mt-6; }
+        .prose p { @apply text-gray-600 mb-4 leading-relaxed; }
+        .prose ul { @apply list-disc list-inside mb-4 text-gray-600 space-y-1; }
         .prose li { @apply mb-1; }
-        .prose table { @apply w-full border-collapse mb-4; }
-        .prose th { @apply bg-gray-100 border px-4 py-2 text-left font-semibold; }
-        .prose td { @apply border px-4 py-2; }
+        .prose table { @apply w-full border-collapse mb-6 text-sm; }
+        .prose th { @apply bg-blue-50 border border-gray-200 px-4 py-3 text-left font-semibold text-gray-700; }
+        .prose td { @apply border border-gray-200 px-4 py-3 text-gray-600; }
         .prose strong { @apply font-semibold text-gray-800; }
-        .loading { animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .stat-card { @apply text-center p-6 rounded-xl bg-white shadow-md border border-gray-100; }
+        .team-card { @apply bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow; }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <!-- Header -->
-    <header class="gradient-bg text-white shadow-lg">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <div class="text-3xl font-bold tracking-tight">GENEQ</div>
-                    <div class="text-sm opacity-80">Global</div>
-                </div>
-                <div class="text-right">
-                    <div class="text-sm opacity-80">Newborn Screening Intelligence System</div>
-                    <div class="text-xs opacity-60">AI-Powered Consultancy Demo</div>
-                </div>
+<body class="bg-gray-50">
+    <!-- Hero Section -->
+    <header class="gradient-hero text-white">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-bold">GENEQ</span>
+                <span class="text-lg text-blue-300">Global</span>
+            </div>
+            <div class="hidden md:flex space-x-1">
+                <div class="nav-link active" data-section="home" onclick="showSection('home')">Home</div>
+                <div class="nav-link" data-section="evidence" onclick="showSection('evidence')">Evidence Synthesis</div>
+                <div class="nav-link" data-section="insights" onclick="showSection('insights')">Key Insights</div>
+                <div class="nav-link" data-section="services" onclick="showSection('services')">Services</div>
+                <div class="nav-link" data-section="team" onclick="showSection('team')">Team</div>
+                <div class="nav-link" data-section="contact" onclick="showSection('contact')">Contact</div>
+            </div>
+        </nav>
+
+        <div id="hero-content" class="container mx-auto px-6 py-20 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Newborn Screening Consultancy</h1>
+            <p class="text-xl text-blue-200 mb-8 max-w-3xl mx-auto">
+                Expert guidance for nations establishing genomic newborn screening programmes,
+                powered by AI-driven evidence synthesis from 520+ academic papers.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('evidence')" class="px-8 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition-colors">
+                    View Evidence Analysis
+                </button>
+                <button onclick="showSection('contact')" class="px-8 py-3 bg-white/10 hover:bg-white/20 rounded-lg font-semibold transition-colors border border-white/30">
+                    Request Consultation
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="gradient-bg text-white border-t border-white/10">
-        <div class="container mx-auto px-6">
-            <div class="flex space-x-2 py-3">
-                <div class="nav-link active" data-section="overview" onclick="showSection('overview')">
-                    Overview
-                </div>
-                <div class="nav-link" data-section="uk" onclick="showSection('uk')">
-                    UK Profile
-                </div>
-                <div class="nav-link" data-section="australia" onclick="showSection('australia')">
-                    Australia Profile
-                </div>
-                <div class="nav-link" data-section="comparison" onclick="showSection('comparison')">
-                    UK vs Australia
-                </div>
-                <div class="nav-link" data-section="theme" onclick="showSection('theme')">
-                    Implementation Challenges
-                </div>
-                <div class="nav-link" data-section="about" onclick="showSection('about')">
-                    About
-                </div>
-            </div>
-        </div>
-    </nav>
-
     <!-- Main Content -->
-    <main class="container mx-auto px-6 py-8">
-        <!-- Overview Section -->
-        <section id="overview" class="section">
-            <div class="grid md:grid-cols-3 gap-6 mb-8">
-                <div class="card text-center">
-                    <div class="text-4xl font-bold text-blue-600 mb-2">520</div>
-                    <div class="text-gray-600">Papers Analyzed</div>
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section py-16">
+            <div class="container mx-auto px-6">
+                <!-- Stats -->
+                <div class="grid md:grid-cols-4 gap-6 mb-16">
+                    <div class="stat-card">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">520</div>
+                        <div class="text-gray-600">Papers Analyzed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-4xl font-bold text-green-600 mb-2">25+</div>
+                        <div class="text-gray-600">Countries Covered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">10</div>
+                        <div class="text-gray-600">Active Programs Tracked</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-4xl font-bold text-orange-600 mb-2">9,503</div>
+                        <div class="text-gray-600">Citations Indexed</div>
+                    </div>
                 </div>
-                <div class="card text-center">
-                    <div class="text-4xl font-bold text-green-600 mb-2">9,503</div>
-                    <div class="text-gray-600">Total Citations</div>
+
+                <!-- Value Proposition -->
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">The Opportunity</h2>
+                        <p class="text-gray-600 mb-4">
+                            Countries worldwide seek guidance on establishing newborn genomic screening programmes—yet
+                            <strong>no dedicated commercial consultancy currently exists</strong> to provide this expertise.
+                        </p>
+                        <p class="text-gray-600 mb-4">
+                            GENEQ Global fills this gap by combining deep institutional knowledge from the UK's Generation Study
+                            with AI-powered intelligence systems that synthesize evidence from hundreds of academic papers.
+                        </p>
+                        <p class="text-gray-600">
+                            Every recommendation is traceable to source publications. Our system understands meaning and context,
+                            enabling insights that would take human researchers weeks to compile.
+                        </p>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Global Programme Landscape</h3>
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b-2 border-blue-200">
+                                    <th class="text-left py-2">Country</th>
+                                    <th class="text-left py-2">Programme</th>
+                                    <th class="text-left py-2">Method</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600">
+                                <tr class="border-b border-blue-100"><td class="py-2">UK</td><td>Generation Study</td><td>WGS</td></tr>
+                                <tr class="border-b border-blue-100"><td class="py-2">Australia</td><td>Mackenzie's Mission</td><td>WES</td></tr>
+                                <tr class="border-b border-blue-100"><td class="py-2">USA</td><td>BabySeq / Guardian</td><td>WES/WGS</td></tr>
+                                <tr class="border-b border-blue-100"><td class="py-2">Netherlands</td><td>SONNET Study</td><td>WGS</td></tr>
+                                <tr class="border-b border-blue-100"><td class="py-2">Saudi Arabia</td><td>National Expansion</td><td>Panel</td></tr>
+                                <tr><td class="py-2">Greece</td><td>GENOMEDICS</td><td>Panel</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="card text-center">
-                    <div class="text-4xl font-bold text-purple-600 mb-2">25+</div>
-                    <div class="text-gray-600">Countries Covered</div>
+
+                <!-- How It Works -->
+                <div class="bg-white rounded-xl shadow-lg p-8 mb-16">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">How Our AI-Powered System Works</h2>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-bold text-blue-600">1</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Aggregate</h4>
+                            <p class="text-sm text-gray-600">Collect 520+ academic papers from OpenAlex and PubMed</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-bold text-green-600">2</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Embed</h4>
+                            <p class="text-sm text-gray-600">Create semantic embeddings enabling intelligent retrieval by topic</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-bold text-purple-600">3</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Analyze</h4>
+                            <p class="text-sm text-gray-600">Generate country profiles and cross-programme pattern analysis</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-bold text-orange-600">4</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Deliver</h4>
+                            <p class="text-sm text-gray-600">Produce consultancy-ready reports with full citations</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <!-- Evidence Synthesis Section -->
+        <section id="evidence" class="section hidden gradient-section py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Evidence Synthesis</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                    Our AI system analyzed 520 academic papers across 25+ countries to identify patterns of
+                    success and failure in newborn genomic screening implementations worldwide.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="card">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Publications by Year</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center"><span class="w-12 text-sm text-gray-600">2025</span><div class="flex-1 bg-gray-100 rounded-full h-4"><div class="bg-blue-500 h-4 rounded-full" style="width: 37%"></div></div><span class="w-8 text-right text-sm text-gray-600">37</span></div>
+                            <div class="flex items-center"><span class="w-12 text-sm text-gray-600">2024</span><div class="flex-1 bg-gray-100 rounded-full h-4"><div class="bg-blue-500 h-4 rounded-full" style="width: 50%"></div></div><span class="w-8 text-right text-sm text-gray-600">50</span></div>
+                            <div class="flex items-center"><span class="w-12 text-sm text-gray-600">2023</span><div class="flex-1 bg-gray-100 rounded-full h-4"><div class="bg-blue-500 h-4 rounded-full" style="width: 51%"></div></div><span class="w-8 text-right text-sm text-gray-600">51</span></div>
+                            <div class="flex items-center"><span class="w-12 text-sm text-gray-600">2022</span><div class="flex-1 bg-gray-100 rounded-full h-4"><div class="bg-blue-600 h-4 rounded-full" style="width: 68%"></div></div><span class="w-8 text-right text-sm text-gray-600">68</span></div>
+                            <div class="flex items-center"><span class="w-12 text-sm text-gray-600">2021</span><div class="flex-1 bg-gray-100 rounded-full h-4"><div class="bg-blue-500 h-4 rounded-full" style="width: 46%"></div></div><span class="w-8 text-right text-sm text-gray-600">46</span></div>
+                            <div class="flex items-center"><span class="w-12 text-sm text-gray-600">2020</span><div class="flex-1 bg-gray-100 rounded-full h-4"><div class="bg-blue-500 h-4 rounded-full" style="width: 39%"></div></div><span class="w-8 text-right text-sm text-gray-600">39</span></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Top Research Countries</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center"><span class="w-24 text-sm text-gray-600">USA</span><div class="flex-1 bg-gray-100 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full" style="width: 100%"></div></div><span class="w-10 text-right text-sm text-gray-600">167</span></div>
+                            <div class="flex items-center"><span class="w-24 text-sm text-gray-600">UK</span><div class="flex-1 bg-gray-100 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full" style="width: 38%"></div></div><span class="w-10 text-right text-sm text-gray-600">63</span></div>
+                            <div class="flex items-center"><span class="w-24 text-sm text-gray-600">China</span><div class="flex-1 bg-gray-100 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full" style="width: 30%"></div></div><span class="w-10 text-right text-sm text-gray-600">50</span></div>
+                            <div class="flex items-center"><span class="w-24 text-sm text-gray-600">Italy</span><div class="flex-1 bg-gray-100 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full" style="width: 16%"></div></div><span class="w-10 text-right text-sm text-gray-600">26</span></div>
+                            <div class="flex items-center"><span class="w-24 text-sm text-gray-600">Canada</span><div class="flex-1 bg-gray-100 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full" style="width: 12%"></div></div><span class="w-10 text-right text-sm text-gray-600">20</span></div>
+                            <div class="flex items-center"><span class="w-24 text-sm text-gray-600">Australia</span><div class="flex-1 bg-gray-100 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full" style="width: 11%"></div></div><span class="w-10 text-right text-sm text-gray-600">19</span></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Publications by Year</h3>
-                    <canvas id="yearChart"></canvas>
-                </div>
-                <div class="card">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Top Research Countries</h3>
-                    <canvas id="countryChart"></canvas>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Known Newborn Screening Programs</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="bg-gray-100">
-                                <th class="px-4 py-3 text-left">Country</th>
-                                <th class="px-4 py-3 text-left">Program</th>
-                                <th class="px-4 py-3 text-left">Status</th>
-                                <th class="px-4 py-3 text-left">Methodology</th>
-                                <th class="px-4 py-3 text-left">Conditions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b hover:bg-gray-50">
-                                <td class="px-4 py-3 font-medium">United Kingdom</td>
-                                <td class="px-4 py-3">NHS Generation Study</td>
-                                <td class="px-4 py-3"><span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs">Active</span></td>
-                                <td class="px-4 py-3">WGS</td>
-                                <td class="px-4 py-3">200</td>
-                            </tr>
-                            <tr class="border-b hover:bg-gray-50">
-                                <td class="px-4 py-3 font-medium">Australia</td>
-                                <td class="px-4 py-3">Mackenzie's Mission</td>
-                                <td class="px-4 py-3"><span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs">Active</span></td>
-                                <td class="px-4 py-3">WES</td>
-                                <td class="px-4 py-3">750+</td>
-                            </tr>
-                            <tr class="border-b hover:bg-gray-50">
-                                <td class="px-4 py-3 font-medium">United States</td>
-                                <td class="px-4 py-3">Guardian Study</td>
-                                <td class="px-4 py-3"><span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs">Active</span></td>
-                                <td class="px-4 py-3">WGS</td>
-                                <td class="px-4 py-3">400</td>
-                            </tr>
-                            <tr class="border-b hover:bg-gray-50">
-                                <td class="px-4 py-3 font-medium">Netherlands</td>
-                                <td class="px-4 py-3">SONNET Study</td>
-                                <td class="px-4 py-3"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs">Pilot</span></td>
-                                <td class="px-4 py-3">WGS</td>
-                                <td class="px-4 py-3">50</td>
-                            </tr>
-                            <tr class="border-b hover:bg-gray-50">
-                                <td class="px-4 py-3 font-medium">Greece</td>
-                                <td class="px-4 py-3">GENOMEDICS Pilot</td>
-                                <td class="px-4 py-3"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs">Pilot</span></td>
-                                <td class="px-4 py-3">Panel</td>
-                                <td class="px-4 py-3">100</td>
-                            </tr>
-                            <tr class="border-b hover:bg-gray-50">
-                                <td class="px-4 py-3 font-medium">Saudi Arabia</td>
-                                <td class="px-4 py-3">National Expansion</td>
-                                <td class="px-4 py-3"><span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs">Active</span></td>
-                                <td class="px-4 py-3">Panel</td>
-                                <td class="px-4 py-3">54</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Global Comparison: Implementation Models</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="px-4 py-3 text-left font-semibold">Country</th>
+                                    <th class="px-4 py-3 text-left font-semibold">Programme</th>
+                                    <th class="px-4 py-3 text-left font-semibold">Methodology</th>
+                                    <th class="px-4 py-3 text-left font-semibold">Conditions</th>
+                                    <th class="px-4 py-3 text-left font-semibold">Implementation Model</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b"><td class="px-4 py-3 font-medium">United Kingdom</td><td>Generation Study</td><td><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">WGS</span></td><td>200</td><td>NHS Integration</td></tr>
+                                <tr class="border-b"><td class="px-4 py-3 font-medium">Australia</td><td>Mackenzie's Mission</td><td><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">WES</span></td><td>750+</td><td>Research Consortium</td></tr>
+                                <tr class="border-b"><td class="px-4 py-3 font-medium">United States</td><td>BabySeq Project</td><td><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">WES</span></td><td>1,800</td><td>Academic Medical Center</td></tr>
+                                <tr class="border-b"><td class="px-4 py-3 font-medium">Netherlands</td><td>SONNET Study</td><td><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">WGS</span></td><td>50</td><td>Research Pilot</td></tr>
+                                <tr class="border-b"><td class="px-4 py-3 font-medium">Saudi Arabia</td><td>National Expansion</td><td><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs">Panel</span></td><td>54</td><td>Healthcare System Expansion</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- UK Profile Section -->
-        <section id="uk" class="section hidden">
-            <div class="card">
-                <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-2xl font-bold text-gray-800">United Kingdom Profile</h2>
-                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">12 papers analyzed</span>
-                </div>
-                <div id="uk-content" class="prose max-w-none"></div>
-            </div>
-        </section>
+        <!-- Key Insights Section -->
+        <section id="insights" class="section hidden py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Key Insights</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                    Patterns of success and failure identified across global newborn screening implementations
+                </p>
 
-        <!-- Australia Profile Section -->
-        <section id="australia" class="section hidden">
-            <div class="card">
-                <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-2xl font-bold text-gray-800">Australia Profile</h2>
-                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">19 papers analyzed</span>
-                </div>
-                <div id="australia-content" class="prose max-w-none"></div>
-            </div>
-        </section>
-
-        <!-- Comparison Section -->
-        <section id="comparison" class="section hidden">
-            <div class="card">
-                <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-2xl font-bold text-gray-800">UK vs Australia Comparison</h2>
-                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">31 papers analyzed</span>
-                </div>
-                <div id="comparison-content" class="prose max-w-none"></div>
-            </div>
-        </section>
-
-        <!-- Theme Section -->
-        <section id="theme" class="section hidden">
-            <div class="card">
-                <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-2xl font-bold text-gray-800">Implementation Challenges Analysis</h2>
-                    <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">Thematic analysis</span>
-                </div>
-                <div id="theme-content" class="prose max-w-none"></div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section hidden">
-            <div class="card">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6">About GENEQ Global</h2>
-                <div class="prose max-w-none">
-                    <p class="text-lg text-gray-600 mb-6">
-                        GENEQ Global Ltd provides expert consultancy for countries establishing or expanding
-                        newborn genomic screening programs. We combine cutting-edge AI technology with deep
-                        domain expertise in genomic medicine.
-                    </p>
-
-                    <h3 class="text-xl font-semibold text-gray-700 mt-8 mb-4">Our Services</h3>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-gray-800">Program Design</h4>
-                            <p class="text-sm text-gray-600">End-to-end support for establishing newborn screening programs</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-gray-800">Technology Assessment</h4>
-                            <p class="text-sm text-gray-600">Evaluation of WGS, WES, and panel-based approaches</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-gray-800">Policy Development</h4>
-                            <p class="text-sm text-gray-600">Regulatory frameworks and governance structures</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-gray-800">Stakeholder Engagement</h4>
-                            <p class="text-sm text-gray-600">Community outreach and healthcare professional training</p>
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <!-- Success Factors -->
+                    <div class="card border-l-4 border-green-500">
+                        <h3 class="text-xl font-bold text-green-700 mb-6">What Works: 5 Critical Success Factors</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold mr-3 flex-shrink-0">1</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Comprehensive Ethical Framework</h4>
+                                    <p class="text-sm text-gray-600">Establish clear guidelines for consent, incidental findings, and data governance before launch</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold mr-3 flex-shrink-0">2</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Phased Implementation Through Pilots</h4>
+                                    <p class="text-sm text-gray-600">2-3 year pilot programs essential before population-wide rollout</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold mr-3 flex-shrink-0">3</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Healthcare Provider Engagement</h4>
+                                    <p class="text-sm text-gray-600">Early investment in obstetrician and pediatrician education</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold mr-3 flex-shrink-0">4</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Adequate Genetic Counseling Capacity</h4>
+                                    <p class="text-sm text-gray-600">Ratio of 1:3000 counselors to births predicts parental satisfaction</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold mr-3 flex-shrink-0">5</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Integration with Existing Screening</h4>
+                                    <p class="text-sm text-gray-600">Build upon existing infrastructure for faster, cost-effective implementation</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <h3 class="text-xl font-semibold text-gray-700 mt-8 mb-4">AI Intelligence System</h3>
-                    <p class="text-gray-600 mb-4">
-                        This demo showcases our AI-powered intelligence system that analyzes the global
-                        literature on newborn genomic screening. The system:
+                    <!-- Failure Modes -->
+                    <div class="card border-l-4 border-red-500">
+                        <h3 class="text-xl font-bold text-red-700 mb-6">What Fails: 5 Common Failure Modes</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-700 font-bold mr-3 flex-shrink-0">1</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Incidental Findings Overwhelm</h4>
+                                    <p class="text-sm text-gray-600">15-30% of resources consumed by uncertain findings unrelated to targets</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-700 font-bold mr-3 flex-shrink-0">2</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Premature Population Rollout</h4>
+                                    <p class="text-sm text-gray-600">Scaling before completing pilot evaluation leads to operational failures</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-700 font-bold mr-3 flex-shrink-0">3</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Discordant Results Create Confusion</h4>
+                                    <p class="text-sm text-gray-600">Without reconciliation protocols, conflicting results cause clinical uncertainty</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-700 font-bold mr-3 flex-shrink-0">4</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Workforce Bottlenecks</h4>
+                                    <p class="text-sm text-gray-600">Underestimating genetic counseling and bioinformatics needs</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-700 font-bold mr-3 flex-shrink-0">5</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Inequitable Access</h4>
+                                    <p class="text-sm text-gray-600">Academic center models create socioeconomic disparities</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Recommendation -->
+                <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-4">Critical Finding</h3>
+                    <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                        "The current evidence base does not support routine population-wide WGS for newborn screening.
+                        Programs should prioritize building evidence through well-designed research while preparing
+                        infrastructure for future implementation when evidence thresholds are met."
                     </p>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>Indexes 520+ academic papers from OpenAlex</li>
-                        <li>Uses Voyage AI embeddings for semantic search</li>
-                        <li>Employs Claude (Anthropic) for intelligent synthesis</li>
-                        <li>Generates evidence-based country profiles in seconds</li>
-                        <li>Provides comparative analysis across programs</li>
+                    <p class="mt-4 text-blue-200 text-sm">— GENEQ Global Analysis, January 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section hidden gradient-section py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Consultancy Services</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                    Flexible engagement models to suit different client needs and procurement processes
+                </p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <div class="card hover:shadow-xl transition-shadow">
+                        <div class="text-blue-600 font-bold text-sm mb-2">STARTER</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Rapid Assessment</h3>
+                        <div class="text-3xl font-bold text-gray-800 mb-4">£8-12k</div>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li>• Country briefing (2-3 pages)</li>
+                            <li>• 1 review cycle</li>
+                            <li>• 2-week turnaround</li>
+                        </ul>
+                    </div>
+                    <div class="card hover:shadow-xl transition-shadow border-2 border-blue-500">
+                        <div class="text-blue-600 font-bold text-sm mb-2">POPULAR</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Comparative Analysis</h3>
+                        <div class="text-3xl font-bold text-gray-800 mb-4">£18-25k</div>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li>• Multi-country report (5-10 pages)</li>
+                            <li>• Best practice synthesis</li>
+                            <li>• 2 review cycles</li>
+                            <li>• 4-week turnaround</li>
+                        </ul>
+                    </div>
+                    <div class="card hover:shadow-xl transition-shadow">
+                        <div class="text-blue-600 font-bold text-sm mb-2">COMPREHENSIVE</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Strategic Programme Design</h3>
+                        <div class="text-3xl font-bold text-gray-800 mb-4">£45-75k</div>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li>• Full implementation roadmap</li>
+                            <li>• Stakeholder workshops</li>
+                            <li>• Policy recommendations</li>
+                            <li>• 3-month engagement</li>
+                        </ul>
+                    </div>
+                    <div class="card hover:shadow-xl transition-shadow">
+                        <div class="text-blue-600 font-bold text-sm mb-2">ONGOING</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Advisory Retainer</h3>
+                        <div class="text-3xl font-bold text-gray-800 mb-4">£5k<span class="text-lg font-normal">/month</span></div>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li>• Ongoing team access</li>
+                            <li>• Ad-hoc queries</li>
+                            <li>• Quarterly briefing updates</li>
+                            <li>• Priority response</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Quality Assurance & Accountability</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Human Review</h4>
+                            <p class="text-sm text-gray-600">All deliverables reviewed by senior team before release. AI accelerates research; humans validate conclusions.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Citation Traceability</h4>
+                            <p class="text-sm text-gray-600">Every factual claim includes source citations. Clients can verify any statement against original publications.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Confidence Indicators</h4>
+                            <p class="text-sm text-gray-600">Where evidence is limited or conflicting, reports explicitly flag uncertainty rather than presenting false confidence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="section hidden py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Founding Team</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                    Combining deep expertise in genomics programme delivery, clinical medicine, and AI-powered research synthesis
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="team-card text-center">
+                        <div class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-3xl font-bold text-blue-600">SB</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Simeón Baker</h3>
+                        <p class="text-blue-600 font-medium mb-4">Chief Executive Officer</p>
+                        <p class="text-sm text-gray-600">
+                            Former senior figure at Genomics England. Led global media engagement for the Generation Study launch.
+                            Deep relationships with key stakeholders including Rich Scott, Natalie Banner, and UK Biobank representatives.
+                        </p>
+                    </div>
+                    <div class="team-card text-center">
+                        <div class="w-24 h-24 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-3xl font-bold text-green-600">MC</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Manuel Corpas</h3>
+                        <p class="text-green-600 font-medium mb-4">Chief Scientific Officer</p>
+                        <p class="text-sm text-gray-600">
+                            Genomics researcher and AI systems architect. Developer of the HEIM project processing 4-5 million abstracts.
+                            Creator of AI-powered research synthesis pipelines. Former positions at Wellcome Sanger Institute and Cambridge.
+                        </p>
+                    </div>
+                    <div class="team-card text-center">
+                        <div class="w-24 h-24 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-3xl font-bold text-purple-600">HG</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Heinner Guio</h3>
+                        <p class="text-purple-600 font-medium mb-4">Chief Medical Officer</p>
+                        <p class="text-sm text-gray-600">
+                            Clinical medicine specialist with deep connections to Latin American health systems.
+                            Key liaison with INS Peru and the Peruvian Genome Project. Background in health economics and policy evaluation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section hidden gradient-hero text-white py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">Get Started</h2>
+                <p class="text-blue-200 mb-8 max-w-2xl mx-auto">
+                    Request a pilot engagement or schedule a demonstration of our AI-powered evidence synthesis capabilities
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+                    <div>
+                        <h4 class="font-semibold mb-2">Simeón Baker</h4>
+                        <p class="text-blue-200">Chief Executive Officer</p>
+                        <p class="text-blue-300">simeon@geneqglobal.com</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Manuel Corpas</h4>
+                        <p class="text-blue-200">Chief Scientific Officer</p>
+                        <p class="text-blue-300">manuel@geneqglobal.com</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Heinner Guio</h4>
+                        <p class="text-blue-200">Chief Medical Officer</p>
+                        <p class="text-blue-300">heinner@geneqglobal.com</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 rounded-xl p-8 max-w-2xl mx-auto">
+                    <h4 class="font-semibold mb-4">Next Steps</h4>
+                    <ul class="text-left text-blue-100 space-y-2">
+                        <li>• Attend a demonstration of our AI-powered evidence synthesis</li>
+                        <li>• Request a pilot engagement at preferential pricing</li>
+                        <li>• Review credentials — full CVs available upon request</li>
+                        <li>• Discuss your requirements without commitment</li>
                     </ul>
-
-                    <div class="mt-8 p-6 bg-blue-50 rounded-lg">
-                        <h4 class="font-semibold text-blue-800 mb-2">Contact Us</h4>
-                        <p class="text-blue-700">info@geneqglobal.com</p>
-                        <p class="text-blue-700">www.geneqglobal.com</p>
-                    </div>
                 </div>
+
+                <p class="mt-12 text-blue-300">www.geneqglobal.com</p>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-12">
+    <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <div class="text-2xl font-bold mb-2">GENEQ <span class="font-normal text-gray-400">Global</span></div>
+            <div class="text-xl font-bold mb-2">GENEQ <span class="font-normal text-gray-400">Global</span></div>
             <p class="text-gray-400 text-sm">Advancing Health Equity Through Genomics</p>
-            <p class="text-gray-500 text-xs mt-4">Demo generated January 2026 | Powered by AI</p>
+            <p class="text-gray-500 text-xs mt-4">© 2026 GENEQ Global Ltd. UK Registered Company.</p>
         </div>
     </footer>
 
-    <script src="data.js"></script>
     <script>
-        // Show section function
         function showSection(sectionId) {
             // Hide all sections
             document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
             // Show selected section
             document.getElementById(sectionId).classList.remove('hidden');
             // Update nav
-            document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
-            document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
-        }
-
-        // Render markdown content
-        function renderContent() {
-            if (typeof demoData !== 'undefined') {
-                document.getElementById('uk-content').innerHTML = marked.parse(demoData.uk || 'Loading...');
-                document.getElementById('australia-content').innerHTML = marked.parse(demoData.australia || 'Loading...');
-                document.getElementById('comparison-content').innerHTML = marked.parse(demoData.comparison || 'Loading...');
-                document.getElementById('theme-content').innerHTML = marked.parse(demoData.theme || 'Loading...');
+            document.querySelectorAll('.nav-link').forEach(n => {
+                n.classList.remove('active', 'bg-blue-600', 'text-white');
+            });
+            const activeNav = document.querySelector(`[data-section="${sectionId}"]`);
+            if (activeNav) {
+                activeNav.classList.add('active');
             }
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        // Initialize charts
-        function initCharts() {
-            // Year chart
-            new Chart(document.getElementById('yearChart'), {
-                type: 'bar',
-                data: {
-                    labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
-                    datasets: [{
-                        label: 'Papers',
-                        data: [46, 50, 39, 46, 68, 51, 50, 37],
-                        backgroundColor: 'rgba(59, 130, 246, 0.7)',
-                        borderColor: 'rgba(59, 130, 246, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: { legend: { display: false } },
-                    scales: { y: { beginAtZero: true } }
-                }
-            });
-
-            // Country chart
-            new Chart(document.getElementById('countryChart'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['United States', 'United Kingdom', 'China', 'Italy', 'Canada', 'Germany', 'Australia', 'Other'],
-                    datasets: [{
-                        data: [167, 63, 50, 26, 20, 20, 19, 155],
-                        backgroundColor: [
-                            '#3B82F6', '#10B981', '#F59E0B', '#EF4444',
-                            '#8B5CF6', '#EC4899', '#06B6D4', '#94A3B8'
-                        ]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'right',
-                            labels: { boxWidth: 12, font: { size: 11 } }
-                        }
-                    }
-                }
-            });
-        }
-
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', () => {
-            renderContent();
-            initCharts();
-        });
     </script>
 </body>
 </html>
