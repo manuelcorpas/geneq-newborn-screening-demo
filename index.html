@@ -12,9 +12,9 @@
         body { font-family: 'Inter', sans-serif; padding-top: 64px; }
         .gradient-hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); }
         .card { @apply bg-white rounded-xl shadow-lg border border-gray-100; }
-        .nav-link { @apply px-4 py-2 rounded-lg transition-all duration-200 cursor-pointer text-sm font-medium; }
-        .nav-link:hover { @apply bg-blue-700 text-white; }
-        .nav-link.active { @apply bg-blue-500 text-white; }
+        .nav-link { @apply px-4 py-2 rounded-lg transition-all duration-200 cursor-pointer text-sm font-semibold border-2 border-transparent; }
+        .nav-link:hover { @apply bg-blue-600 text-white border-blue-400; }
+        .nav-link.active { @apply bg-blue-500 text-white border-blue-300 shadow-lg; }
         .phase-card { @apply border-l-4 p-6 bg-white rounded-r-xl shadow-md; }
         .deliverable { @apply flex items-start gap-3 p-3 bg-gray-50 rounded-lg; }
         .stat-bar { height: 24px; border-radius: 4px; transition: width 1s ease-out; }
@@ -28,12 +28,12 @@
                 <span class="text-2xl font-bold text-white">GENEQ</span>
                 <span class="text-lg text-blue-300">Global</span>
             </div>
-            <div class="hidden md:flex space-x-1 text-sm">
-                <div class="nav-link active text-white" data-section="offer" onclick="showSection('offer')">Insights</div>
-                <div class="nav-link text-gray-300" data-section="journey" onclick="showSection('journey')">Your Journey</div>
-                <div class="nav-link text-gray-300" data-section="typology" onclick="showSection('typology')">Your Context</div>
-                <div class="nav-link text-gray-300" data-section="deliverables" onclick="showSection('deliverables')">Deliverables</div>
-                <div class="nav-link text-gray-300" data-section="engage" onclick="showSection('engage')">Work With Us</div>
+            <div class="hidden md:flex space-x-2 text-sm bg-gray-800 rounded-xl p-1">
+                <div class="nav-link active text-white bg-blue-500" data-section="offer" onclick="showSection('offer')">Insights</div>
+                <div class="nav-link text-gray-300 bg-gray-700 hover:bg-gray-600" data-section="journey" onclick="showSection('journey')">Your Journey</div>
+                <div class="nav-link text-gray-300 bg-gray-700 hover:bg-gray-600" data-section="typology" onclick="showSection('typology')">Your Context</div>
+                <div class="nav-link text-gray-300 bg-gray-700 hover:bg-gray-600" data-section="deliverables" onclick="showSection('deliverables')">Deliverables</div>
+                <div class="nav-link text-gray-300 bg-gray-700 hover:bg-gray-600" data-section="engage" onclick="showSection('engage')">Work With Us</div>
             </div>
         </div>
     </nav>
@@ -1008,16 +1008,16 @@
             document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
             // Show the target section
             document.getElementById(sectionId).classList.remove('hidden');
-            // Update nav styling
+            // Update nav styling - reset all tabs
             document.querySelectorAll('.nav-link').forEach(n => {
                 n.classList.remove('active', 'bg-blue-500', 'text-white');
-                n.classList.add('text-gray-300');
+                n.classList.add('text-gray-300', 'bg-gray-700');
             });
-            // Add active to the clicked nav
+            // Add active styling to the clicked tab
             const activeNav = document.querySelector(`[data-section="${sectionId}"]`);
             if (activeNav) {
                 activeNav.classList.add('active', 'bg-blue-500', 'text-white');
-                activeNav.classList.remove('text-gray-300');
+                activeNav.classList.remove('text-gray-300', 'bg-gray-700');
             }
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
