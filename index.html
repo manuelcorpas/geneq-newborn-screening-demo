@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GENEQ Global - Newborn Screening Intelligence</title>
+    <title>GENEQ Global - Newborn Screening Programme Implementation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
         .gradient-hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); }
-        .gradient-accent { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); }
         .card { @apply bg-white rounded-xl shadow-lg border border-gray-100; }
         .nav-link { @apply px-4 py-2 rounded-lg transition-all duration-200 cursor-pointer text-sm font-medium; }
         .nav-link:hover { @apply bg-blue-50 text-blue-700; }
         .nav-link.active { @apply bg-blue-600 text-white; }
-        .stat-card { @apply text-center p-6 rounded-xl; }
-        .insight-number { @apply w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0; }
+        .phase-card { @apply border-l-4 p-6 bg-white rounded-r-xl shadow-md; }
+        .deliverable { @apply flex items-start gap-3 p-3 bg-gray-50 rounded-lg; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -28,632 +27,723 @@
                 <span class="text-lg text-blue-300">Global</span>
             </div>
             <div class="hidden md:flex space-x-1 text-sm">
-                <div class="nav-link active" data-section="insights" onclick="showSection('insights')">Key Insights</div>
-                <div class="nav-link" data-section="global" onclick="showSection('global')">Global Landscape</div>
-                <div class="nav-link" data-section="methods" onclick="showSection('methods')">Proven Methods</div>
-                <div class="nav-link" data-section="risks" onclick="showSection('risks')">Risk Analysis</div>
-                <div class="nav-link" data-section="contact" onclick="showSection('contact')">Engage Us</div>
+                <div class="nav-link active" data-section="offer" onclick="showSection('offer')">What We Do</div>
+                <div class="nav-link" data-section="journey" onclick="showSection('journey')">Your Journey</div>
+                <div class="nav-link" data-section="typology" onclick="showSection('typology')">Your Context</div>
+                <div class="nav-link" data-section="deliverables" onclick="showSection('deliverables')">Deliverables</div>
+                <div class="nav-link" data-section="engage" onclick="showSection('engage')">Work With Us</div>
             </div>
         </nav>
 
-        <div class="container mx-auto px-6 py-16 text-center">
-            <div class="inline-block px-4 py-1 bg-blue-500/30 rounded-full text-sm mb-4">Evidence-Based Intelligence | 520 Papers | 25+ Countries</div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Genomic Newborn Screening<br>Intelligence & Consultancy</h1>
-            <p class="text-xl text-blue-200 mb-8 max-w-3xl mx-auto">We analyze global programmes to deliver proven implementation strategies. Countries that follow evidence-based approaches achieve 95% coverage. Those that don't face 3x higher failure rates.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#insights" onclick="showSection('insights')" class="px-6 py-3 bg-white text-blue-700 rounded-lg font-semibold hover:bg-blue-50 transition-colors">View Key Insights</a>
-                <a href="#contact" onclick="showSection('contact')" class="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors">Request Analysis</a>
+        <div class="container mx-auto px-6 py-16">
+            <div class="max-w-4xl">
+                <div class="inline-block px-4 py-1 bg-blue-500/30 rounded-full text-sm mb-6">For Ministries of Health & National Programme Leaders</div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">We help countries design, pilot and scale newborn genomic screening programmes</h1>
+                <p class="text-xl text-blue-200 mb-8">From initial feasibility to national rollout, using global evidence adapted to your local constraints.</p>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
+                    <p class="text-lg"><strong class="text-white">Our core offer:</strong> <span class="text-blue-100">End-to-end implementation support across the full programme lifecycle, with evidence-based recommendations tailored to your regulatory, fiscal, and infrastructural context.</span></p>
+                </div>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#journey" onclick="showSection('journey')" class="px-6 py-3 bg-white text-blue-700 rounded-lg font-semibold hover:bg-blue-50 transition-colors">See the Implementation Journey</a>
+                    <a href="#typology" onclick="showSection('typology')" class="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors">Find Your Starting Point</a>
+                </div>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Key Insights Section -->
-        <section id="insights" class="section py-16">
+        <!-- What We Do Section -->
+        <section id="offer" class="section py-16">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Intelligence Reveals</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Analysis of 520 academic papers, 47 verified primary sources, and programme data from 25+ countries identifies critical success factors and failure patterns.</p>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">What We Will Do With You</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">We don't just deliver reports. We co-develop your programme with your technical working groups, support you through governance processes, and stay with you from feasibility through to national scale-up.</p>
                 </div>
 
-                <!-- Headline Stats -->
-                <div class="grid md:grid-cols-4 gap-6 mb-12">
-                    <div class="stat-card bg-gradient-to-br from-blue-500 to-blue-700 text-white">
-                        <div class="text-4xl font-bold mb-2">5-7</div>
-                        <div class="text-blue-100">Years to Population Scale</div>
-                        <div class="text-xs text-blue-200 mt-2">Rushing causes 3x failure rate</div>
-                    </div>
-                    <div class="stat-card bg-gradient-to-br from-green-500 to-green-700 text-white">
-                        <div class="text-4xl font-bold mb-2">95%</div>
-                        <div class="text-green-100">Coverage Achievable</div>
-                        <div class="text-xs text-green-200 mt-2">With NHS-style integration</div>
-                    </div>
-                    <div class="stat-card bg-gradient-to-br from-purple-500 to-purple-700 text-white">
-                        <div class="text-4xl font-bold mb-2">1:3000</div>
-                        <div class="text-purple-100">Critical Counselor Ratio</div>
-                        <div class="text-xs text-purple-200 mt-2">Below this, quality suffers</div>
-                    </div>
-                    <div class="stat-card bg-gradient-to-br from-orange-500 to-orange-700 text-white">
-                        <div class="text-4xl font-bold mb-2">15-30%</div>
-                        <div class="text-orange-100">Resource Drain Risk</div>
-                        <div class="text-xs text-orange-200 mt-2">From unmanaged incidental findings</div>
-                    </div>
-                </div>
-
-                <!-- Core Findings -->
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Finding 1 -->
-                    <div class="card p-8">
-                        <div class="flex items-start gap-4 mb-4">
-                            <div class="insight-number bg-blue-100 text-blue-700">1</div>
-                            <h3 class="text-xl font-bold text-gray-800">Phased Implementation is Non-Negotiable</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Every successful large-scale programme began with a 2-3 year pilot. Programmes skipping this phase report <span class="font-semibold text-red-600">3x higher protocol modification rates</span> post-launch.</p>
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="text-sm font-semibold text-gray-700 mb-2">Evidence:</div>
-                            <ul class="text-sm text-gray-600 space-y-1">
-                                <li>UK Generation Study: 4+ years co-design before launch</li>
-                                <li>Australia BabyScreen+: 3-year pilot generating evidence</li>
-                                <li>Netherlands SONNET: 2-year pilot with 50 conditions</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Finding 2 -->
-                    <div class="card p-8">
-                        <div class="flex items-start gap-4 mb-4">
-                            <div class="insight-number bg-green-100 text-green-700">2</div>
-                            <h3 class="text-xl font-bold text-gray-800">Workforce is the Hidden Bottleneck</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Programmes consistently underestimate genetic counseling needs. <span class="font-semibold text-red-600">40-60% knowledge gaps</span> exist among providers before training.</p>
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="text-sm font-semibold text-gray-700 mb-2">Critical Ratios:</div>
-                            <ul class="text-sm text-gray-600 space-y-1">
-                                <li>Genetic counselors: Minimum 1:3,000 screened births</li>
-                                <li>Wait times >4 weeks = compromised clinical utility</li>
-                                <li>Provider education must precede programme launch</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Finding 3 -->
-                    <div class="card p-8">
-                        <div class="flex items-start gap-4 mb-4">
-                            <div class="insight-number bg-purple-100 text-purple-700">3</div>
-                            <h3 class="text-xl font-bold text-gray-800">Cost-Effectiveness Remains Unproven</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Current WGS costs <span class="font-semibold">1,780x more</span> than traditional screening. ROI depends on early diagnosis preventing costly late interventions.</p>
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="text-sm font-semibold text-gray-700 mb-2">Cost Reality:</div>
-                            <ul class="text-sm text-gray-600 space-y-1">
-                                <li>WGS per baby: £1,050 (UK current)</li>
-                                <li>Traditional heel-prick: £0.59</li>
-                                <li>Future projection: $100/genome at scale</li>
-                                <li>UK national rollout budget: £650M</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Finding 4 -->
-                    <div class="card p-8">
-                        <div class="flex items-start gap-4 mb-4">
-                            <div class="insight-number bg-orange-100 text-orange-700">4</div>
-                            <h3 class="text-xl font-bold text-gray-800">Equity Must Be Built In, Not Retrofitted</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Programmes implemented through academic centers create <span class="font-semibold text-red-600">socioeconomic enrollment bias</span>. Rural and minority populations face systematic access barriers.</p>
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="text-sm font-semibold text-gray-700 mb-2">Equity Gaps:</div>
-                            <ul class="text-sm text-gray-600 space-y-1">
-                                <li>Genomic databases underrepresent non-European populations</li>
-                                <li>Cultural adaptation of consent processes often lacking</li>
-                                <li>Follow-up care access varies by geography/income</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Call to Action -->
-                <div class="mt-12 text-center">
-                    <div class="bg-blue-50 border border-blue-200 rounded-xl p-8 max-w-3xl mx-auto">
-                        <h3 class="text-xl font-bold text-blue-800 mb-3">Want the Complete Analysis?</h3>
-                        <p class="text-gray-600 mb-4">Our full intelligence reports include 47 verified sources, country-specific recommendations, and implementation roadmaps tailored to your healthcare context.</p>
-                        <a href="#contact" onclick="showSection('contact')" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">Request Country Analysis</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Global Landscape Section -->
-        <section id="global" class="section hidden bg-gray-100 py-16">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Global Programme Landscape</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">10 active programmes across diverse healthcare contexts. Each approach offers lessons for new implementations.</p>
-                </div>
-
-                <!-- Programme Comparison Table -->
-                <div class="card overflow-hidden mb-12">
+                <!-- Service-to-Lifecycle Mapping -->
+                <div class="card p-8 mb-12">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Our Services Mapped to Your Programme Lifecycle</h3>
                     <div class="overflow-x-auto">
-                        <table class="w-full">
-                            <thead class="bg-gray-800 text-white">
-                                <tr>
-                                    <th class="px-6 py-4 text-left">Country</th>
-                                    <th class="px-6 py-4 text-left">Programme</th>
-                                    <th class="px-6 py-4 text-center">Technology</th>
-                                    <th class="px-6 py-4 text-center">Conditions</th>
-                                    <th class="px-6 py-4 text-left">Implementation Model</th>
-                                    <th class="px-6 py-4 text-center">Status</th>
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="bg-gray-800 text-white">
+                                    <th class="px-4 py-3 text-left rounded-tl-lg">Programme Stage</th>
+                                    <th class="px-4 py-3 text-left">What You Need to Decide</th>
+                                    <th class="px-4 py-3 text-left">How We Help</th>
+                                    <th class="px-4 py-3 text-left rounded-tr-lg">Typical Duration</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-sm">
+                            <tbody>
                                 <tr class="border-b bg-blue-50">
-                                    <td class="px-6 py-4 font-semibold">United Kingdom</td>
-                                    <td class="px-6 py-4">NHS Generation Study</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-blue-600 text-white rounded-full text-xs font-semibold">WGS</span></td>
-                                    <td class="px-6 py-4 text-center font-bold">223</td>
-                                    <td class="px-6 py-4">NHS Health Service Integration</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">Active</span></td>
+                                    <td class="px-4 py-4 font-semibold text-blue-700">Feasibility</td>
+                                    <td class="px-4 py-4">Should we pursue genomic NBS? What approach fits our context?</td>
+                                    <td class="px-4 py-4">Situational analysis, stakeholder mapping, options appraisal, go/no-go recommendation</td>
+                                    <td class="px-4 py-4">2-4 months</td>
                                 </tr>
                                 <tr class="border-b">
-                                    <td class="px-6 py-4 font-semibold">Australia</td>
-                                    <td class="px-6 py-4">Mackenzie's Mission</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-green-600 text-white rounded-full text-xs font-semibold">WES</span></td>
-                                    <td class="px-6 py-4 text-center font-bold">750+</td>
-                                    <td class="px-6 py-4">Research Consortium</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">Active</span></td>
+                                    <td class="px-4 py-4 font-semibold text-green-700">Pilot Design</td>
+                                    <td class="px-4 py-4">Which conditions? What consent model? How will data flow?</td>
+                                    <td class="px-4 py-4">Condition panel selection, consent framework, IT architecture, ethics submission support</td>
+                                    <td class="px-4 py-4">6-12 months</td>
+                                </tr>
+                                <tr class="border-b bg-green-50">
+                                    <td class="px-4 py-4 font-semibold text-green-700">Pilot Implementation</td>
+                                    <td class="px-4 py-4">Is the pilot working? What needs adjustment?</td>
+                                    <td class="px-4 py-4">Operational SOPs, workforce training, real-time monitoring, protocol refinement</td>
+                                    <td class="px-4 py-4">24-36 months</td>
                                 </tr>
                                 <tr class="border-b">
-                                    <td class="px-6 py-4 font-semibold">United States</td>
-                                    <td class="px-6 py-4">BabySeq Project</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-green-600 text-white rounded-full text-xs font-semibold">WES</span></td>
-                                    <td class="px-6 py-4 text-center font-bold">1,800</td>
-                                    <td class="px-6 py-4">Academic Medical Center</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">Active</span></td>
+                                    <td class="px-4 py-4 font-semibold text-purple-700">Scale-up Planning</td>
+                                    <td class="px-4 py-4">What's the business case? How do we secure funding?</td>
+                                    <td class="px-4 py-4">Costed business case, multi-year budget profile, political narrative, finance ministry briefings</td>
+                                    <td class="px-4 py-4">6-12 months</td>
                                 </tr>
-                                <tr class="border-b">
-                                    <td class="px-6 py-4 font-semibold">United States</td>
-                                    <td class="px-6 py-4">Guardian Study</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-blue-600 text-white rounded-full text-xs font-semibold">WGS</span></td>
-                                    <td class="px-6 py-4 text-center font-bold">400</td>
-                                    <td class="px-6 py-4">Academic Medical Center</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">Active</span></td>
-                                </tr>
-                                <tr class="border-b">
-                                    <td class="px-6 py-4 font-semibold">Netherlands</td>
-                                    <td class="px-6 py-4">SONNET Study</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-blue-600 text-white rounded-full text-xs font-semibold">WGS</span></td>
-                                    <td class="px-6 py-4 text-center font-bold">50</td>
-                                    <td class="px-6 py-4">Research Pilot</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs">Pilot</span></td>
-                                </tr>
-                                <tr class="border-b">
-                                    <td class="px-6 py-4 font-semibold">Greece</td>
-                                    <td class="px-6 py-4">GENOMEDICS</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-orange-600 text-white rounded-full text-xs font-semibold">Panel</span></td>
-                                    <td class="px-6 py-4 text-center font-bold">100</td>
-                                    <td class="px-6 py-4">Research Pilot</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs">Pilot</span></td>
-                                </tr>
-                                <tr class="border-b">
-                                    <td class="px-6 py-4 font-semibold">Belgium</td>
-                                    <td class="px-6 py-4">BabyDetect</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-blue-600 text-white rounded-full text-xs font-semibold">WGS</span></td>
-                                    <td class="px-6 py-4 text-center font-bold">150</td>
-                                    <td class="px-6 py-4">Research Pilot</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs">Pilot</span></td>
-                                </tr>
-                                <tr class="border-b">
-                                    <td class="px-6 py-4 font-semibold">Saudi Arabia</td>
-                                    <td class="px-6 py-4">National Expansion</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-orange-600 text-white rounded-full text-xs font-semibold">Panel</span></td>
-                                    <td class="px-6 py-4 text-center font-bold">54</td>
-                                    <td class="px-6 py-4">Healthcare System Expansion</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">Active</span></td>
-                                </tr>
-                                <tr class="border-b">
-                                    <td class="px-6 py-4 font-semibold">Qatar</td>
-                                    <td class="px-6 py-4">Qatar Genome Newborn</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-blue-600 text-white rounded-full text-xs font-semibold">WGS</span></td>
-                                    <td class="px-6 py-4 text-center font-bold">200</td>
-                                    <td class="px-6 py-4">National Programme</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs">Pilot</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 font-semibold">Israel</td>
-                                    <td class="px-6 py-4">National Programme</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-orange-600 text-white rounded-full text-xs font-semibold">Panel</span></td>
-                                    <td class="px-6 py-4 text-center font-bold">30</td>
-                                    <td class="px-6 py-4">Healthcare System Integration</td>
-                                    <td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">Active</span></td>
+                                <tr class="bg-purple-50">
+                                    <td class="px-4 py-4 font-semibold text-purple-700">National Rollout</td>
+                                    <td class="px-4 py-4">How do we maintain quality at scale? How do we evaluate?</td>
+                                    <td class="px-4 py-4">Quality assurance framework, equity monitoring, outcome evaluation, continuous improvement</td>
+                                    <td class="px-4 py-4">Ongoing</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- Implementation Models -->
-                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Four Implementation Models</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- How We're Different -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
                     <div class="card p-6">
-                        <div class="text-3xl mb-4">🏥</div>
-                        <h4 class="font-bold text-gray-800 mb-2">NHS Integration</h4>
-                        <p class="text-sm text-gray-600 mb-4">Full integration within universal healthcare system</p>
-                        <div class="text-xs space-y-1">
-                            <div class="flex justify-between"><span class="text-gray-500">Coverage:</span><span class="font-semibold text-green-600">Universal</span></div>
-                            <div class="flex justify-between"><span class="text-gray-500">Best for:</span><span class="font-semibold">UK, Canada</span></div>
-                        </div>
+                        <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xl font-bold mb-4">1</div>
+                        <h4 class="font-bold text-gray-800 mb-2">Co-Production, Not Delivery</h4>
+                        <p class="text-sm text-gray-600">We work alongside your technical committees, ethics boards, and finance ministries - not just hand over documents. Your national experts lead; we support with global evidence.</p>
                     </div>
                     <div class="card p-6">
-                        <div class="text-3xl mb-4">🔬</div>
-                        <h4 class="font-bold text-gray-800 mb-2">Research Consortium</h4>
-                        <p class="text-sm text-gray-600 mb-4">Multi-center research with clinical integration</p>
-                        <div class="text-xs space-y-1">
-                            <div class="flex justify-between"><span class="text-gray-500">Coverage:</span><span class="font-semibold text-yellow-600">Limited</span></div>
-                            <div class="flex justify-between"><span class="text-gray-500">Best for:</span><span class="font-semibold">Building capacity</span></div>
-                        </div>
+                        <div class="w-12 h-12 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-xl font-bold mb-4">2</div>
+                        <h4 class="font-bold text-gray-800 mb-2">Adapted to Your Context</h4>
+                        <p class="text-sm text-gray-600">No UK-style blueprints forced onto different systems. We start with your regulatory, fiscal, and infrastructural reality and build recommendations that are actually feasible.</p>
                     </div>
                     <div class="card p-6">
-                        <div class="text-3xl mb-4">🎓</div>
-                        <h4 class="font-bold text-gray-800 mb-2">Academic Center</h4>
-                        <p class="text-sm text-gray-600 mb-4">Research-intensive through major institutions</p>
-                        <div class="text-xs space-y-1">
-                            <div class="flex justify-between"><span class="text-gray-500">Coverage:</span><span class="font-semibold text-orange-600">Geographic limits</span></div>
-                            <div class="flex justify-between"><span class="text-gray-500">Best for:</span><span class="font-semibold">US, EU</span></div>
-                        </div>
-                    </div>
-                    <div class="card p-6">
-                        <div class="text-3xl mb-4">📈</div>
-                        <h4 class="font-bold text-gray-800 mb-2">System Expansion</h4>
-                        <p class="text-sm text-gray-600 mb-4">Build on existing newborn screening infrastructure</p>
-                        <div class="text-xs space-y-1">
-                            <div class="flex justify-between"><span class="text-gray-500">Coverage:</span><span class="font-semibold text-green-600">95% achievable</span></div>
-                            <div class="flex justify-between"><span class="text-gray-500">Best for:</span><span class="font-semibold">Saudi, Israel</span></div>
-                        </div>
+                        <div class="w-12 h-12 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xl font-bold mb-4">3</div>
+                        <h4 class="font-bold text-gray-800 mb-2">Options, Not Prescriptions</h4>
+                        <p class="text-sm text-gray-600">When national stakeholders disagree with our analysis, we present transparent options with pros and cons. We respect national sovereignty and community norms.</p>
                     </div>
                 </div>
 
-                <!-- Technology Selection -->
-                <div class="card p-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6">Technology Selection Guide</h3>
-                    <p class="text-gray-600 mb-6">Choose technology based on your healthcare context, not peer pressure:</p>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="border-2 border-orange-300 rounded-lg p-6 bg-orange-50">
-                            <div class="font-bold text-orange-700 mb-2">Targeted Panel (50-100 conditions)</div>
-                            <p class="text-sm text-gray-600 mb-4">Cost-effective, population-relevant focus on actionable conditions</p>
-                            <div class="text-xs text-gray-500">
-                                <strong>Best for:</strong> Limited resources, high consanguinity, rapid implementation<br>
-                                <strong>Reference:</strong> Saudi Arabia, Israel
-                            </div>
-                        </div>
-                        <div class="border-2 border-green-300 rounded-lg p-6 bg-green-50">
-                            <div class="font-bold text-green-700 mb-2">Whole Exome (300-750 conditions)</div>
-                            <p class="text-sm text-gray-600 mb-4">Balance of comprehensive coverage and implementation feasibility</p>
-                            <div class="text-xs text-gray-500">
-                                <strong>Best for:</strong> Moderate resources, research capacity<br>
-                                <strong>Reference:</strong> Australia, USA (BabySeq)
-                            </div>
-                        </div>
-                        <div class="border-2 border-blue-300 rounded-lg p-6 bg-blue-50">
-                            <div class="font-bold text-blue-700 mb-2">Whole Genome (200+ conditions)</div>
-                            <p class="text-sm text-gray-600 mb-4">Future-proofing with comprehensive genomic data</p>
-                            <div class="text-xs text-gray-500">
-                                <strong>Best for:</strong> Advanced infrastructure, integration goals<br>
-                                <strong>Reference:</strong> UK, Netherlands
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Proven Methods Section -->
-        <section id="methods" class="section hidden py-16">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Evidence-Based Implementation Framework</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Distilled from analysis of successful and failed programmes worldwide. This framework reduces implementation risk by 60%.</p>
-                </div>
-
-                <!-- Critical Success Factors -->
-                <div class="card p-8 mb-12">
-                    <h3 class="text-xl font-bold text-green-700 mb-6">5 Critical Success Factors</h3>
-                    <div class="grid md:grid-cols-5 gap-6">
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-                            <h4 class="font-bold text-gray-800 mb-2">Ethics First</h4>
-                            <p class="text-sm text-gray-600">Establish ethical frameworks covering consent, incidental findings, and data governance before launch</p>
-                            <div class="mt-3 text-xs text-green-600 font-semibold">Saves 12-18 months of delays</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
-                            <h4 class="font-bold text-gray-800 mb-2">Phased Pilots</h4>
-                            <p class="text-sm text-gray-600">2-3 year pilot with defined evaluation criteria before scale-up decisions</p>
-                            <div class="mt-3 text-xs text-green-600 font-semibold">Reduces post-launch changes by 67%</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
-                            <h4 class="font-bold text-gray-800 mb-2">Provider Buy-In</h4>
-                            <p class="text-sm text-gray-600">Healthcare provider education before launch. 40-60% have knowledge gaps pre-training</p>
-                            <div class="mt-3 text-xs text-green-600 font-semibold">Higher enrollment rates</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
-                            <h4 class="font-bold text-gray-800 mb-2">Counseling Capacity</h4>
-                            <p class="text-sm text-gray-600">Genetic counselor ratio must exceed 1:3000 births for quality outcomes</p>
-                            <div class="mt-3 text-xs text-green-600 font-semibold">Parental satisfaction correlation</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-2xl font-bold mx-auto mb-4">5</div>
-                            <h4 class="font-bold text-gray-800 mb-2">Infrastructure Integration</h4>
-                            <p class="text-sm text-gray-600">Build on existing NBS systems for faster, more cost-effective implementation</p>
-                            <div class="mt-3 text-xs text-green-600 font-semibold">Saudi achieved 95% coverage</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Implementation Timeline -->
-                <div class="card p-8 mb-12">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6">Realistic Implementation Timeline</h3>
-                    <div class="relative">
-                        <div class="absolute left-8 top-0 bottom-0 w-1 bg-blue-200"></div>
-                        <div class="space-y-8">
-                            <div class="relative flex items-start">
-                                <div class="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold flex-shrink-0 z-10">Y1</div>
-                                <div class="ml-8 bg-blue-50 rounded-lg p-6 flex-grow">
-                                    <h4 class="font-bold text-blue-800">Year 1: Foundation</h4>
-                                    <ul class="text-sm text-gray-600 mt-2 space-y-1">
-                                        <li>• Landscape assessment of existing infrastructure</li>
-                                        <li>• Establish governance committee</li>
-                                        <li>• Map and engage stakeholders</li>
-                                        <li>• Assess workforce capacity</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="relative flex items-start">
-                                <div class="w-16 h-16 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold flex-shrink-0 z-10">Y2-3</div>
-                                <div class="ml-8 bg-blue-50 rounded-lg p-6 flex-grow">
-                                    <h4 class="font-bold text-blue-800">Years 2-3: Design & Prepare</h4>
-                                    <ul class="text-sm text-gray-600 mt-2 space-y-1">
-                                        <li>• Develop ethical framework and consent processes</li>
-                                        <li>• Design pilot study with equity considerations</li>
-                                        <li>• Invest in laboratory and bioinformatics</li>
-                                        <li>• Build genetic counseling capacity</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="relative flex items-start">
-                                <div class="w-16 h-16 rounded-full bg-blue-400 text-white flex items-center justify-center font-bold flex-shrink-0 z-10">Y3-5</div>
-                                <div class="ml-8 bg-blue-50 rounded-lg p-6 flex-grow">
-                                    <h4 class="font-bold text-blue-800">Years 3-5: Pilot Phase</h4>
-                                    <ul class="text-sm text-gray-600 mt-2 space-y-1">
-                                        <li>• Implement controlled pilot with defined criteria</li>
-                                        <li>• Monitor technical performance and outcomes</li>
-                                        <li>• Collect cost-effectiveness data</li>
-                                        <li>• Refine protocols based on evidence</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="relative flex items-start">
-                                <div class="w-16 h-16 rounded-full bg-green-500 text-white flex items-center justify-center font-bold flex-shrink-0 z-10">Y5+</div>
-                                <div class="ml-8 bg-green-50 rounded-lg p-6 flex-grow">
-                                    <h4 class="font-bold text-green-800">Year 5+: Scale-Up Decision</h4>
-                                    <ul class="text-sm text-gray-600 mt-2 space-y-1">
-                                        <li>• Comprehensive pilot evaluation</li>
-                                        <li>• Stakeholder consultation</li>
-                                        <li>• Policy decision on population implementation</li>
-                                        <li>• Phased rollout with continuous monitoring</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Success Metrics -->
-                <div class="card p-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6">Key Performance Indicators</h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div>
-                            <h4 class="font-semibold text-blue-700 mb-4">Coverage & Access</h4>
-                            <ul class="text-sm text-gray-600 space-y-2">
-                                <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>% of births screened</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Geographic distribution</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Socioeconomic representation</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Ethnic diversity of enrolled</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-green-700 mb-4">Quality & Outcomes</h4>
-                            <ul class="text-sm text-gray-600 space-y-2">
-                                <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>Turnaround time (target: 28 days)</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>False positive/negative rates</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>Conditions detected</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>Interventions initiated</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-purple-700 mb-4">Satisfaction & Economics</h4>
-                            <ul class="text-sm text-gray-600 space-y-2">
-                                <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>Parental experience scores</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>Provider confidence ratings</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>Cost per diagnosis</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>Cost per QALY gained</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Risk Analysis Section -->
-        <section id="risks" class="section hidden bg-gray-100 py-16">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Risk Analysis: Common Failure Modes</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Learn from programmes that struggled. These patterns appear repeatedly across failed or paused implementations.</p>
-                </div>
-
-                <!-- Failure Modes -->
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <div class="card p-8 border-l-4 border-red-500">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold">1</div>
-                            <h3 class="text-lg font-bold text-gray-800">Incidental Findings Overwhelm</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">WGS programmes without clear secondary findings policies become paralyzed by variant interpretation workload.</p>
-                        <div class="bg-red-50 rounded-lg p-4">
-                            <div class="text-sm font-semibold text-red-700 mb-2">Impact:</div>
-                            <p class="text-sm text-gray-600">15-30% of resources consumed by managing uncertain findings unrelated to target conditions</p>
-                            <div class="text-sm font-semibold text-green-700 mt-3 mb-1">Prevention:</div>
-                            <p class="text-sm text-gray-600">Establish explicit policies on reportable secondary findings categories before launch</p>
-                        </div>
-                    </div>
-
-                    <div class="card p-8 border-l-4 border-red-500">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold">2</div>
-                            <h3 class="text-lg font-bold text-gray-800">Premature Population Rollout</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Programmes scaling before pilot evaluation face operational failures, PR challenges, and quality concerns.</p>
-                        <div class="bg-red-50 rounded-lg p-4">
-                            <div class="text-sm font-semibold text-red-700 mb-2">Impact:</div>
-                            <p class="text-sm text-gray-600">Multiple programmes have scaled back or paused after premature expansion</p>
-                            <div class="text-sm font-semibold text-green-700 mt-3 mb-1">Prevention:</div>
-                            <p class="text-sm text-gray-600">Define specific evidence thresholds for scale-up; maintain pilot until met</p>
-                        </div>
-                    </div>
-
-                    <div class="card p-8 border-l-4 border-red-500">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold">3</div>
-                            <h3 class="text-lg font-bold text-gray-800">Discordant Results Confusion</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">When genomic screening conflicts with conventional screening, programmes without reconciliation protocols face clinical uncertainty.</p>
-                        <div class="bg-red-50 rounded-lg p-4">
-                            <div class="text-sm font-semibold text-red-700 mb-2">Impact:</div>
-                            <p class="text-sm text-gray-600">BabySeq research documents significant discordance requiring careful management</p>
-                            <div class="text-sm font-semibold text-green-700 mt-3 mb-1">Prevention:</div>
-                            <p class="text-sm text-gray-600">Design integrated workflows with clear protocols for result discordance</p>
-                        </div>
-                    </div>
-
-                    <div class="card p-8 border-l-4 border-red-500">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold">4</div>
-                            <h3 class="text-lg font-bold text-gray-800">Workforce Bottlenecks</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Programmes frequently underestimate genetic counseling, bioinformatics, and clinical genetics requirements.</p>
-                        <div class="bg-red-50 rounded-lg p-4">
-                            <div class="text-sm font-semibold text-red-700 mb-2">Impact:</div>
-                            <p class="text-sm text-gray-600">Wait times exceeding 4 weeks compromise clinical utility</p>
-                            <div class="text-sm font-semibold text-green-700 mt-3 mb-1">Prevention:</div>
-                            <p class="text-sm text-gray-600">Conduct workforce modeling before launch; invest in training pipelines</p>
-                        </div>
-                    </div>
-
-                    <div class="card p-8 border-l-4 border-red-500 md:col-span-2">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold">5</div>
-                            <h3 class="text-lg font-bold text-gray-800">Inequitable Access</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Programmes implemented through academic centers or requiring parental initiative create socioeconomic disparities.</p>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="bg-red-50 rounded-lg p-4">
-                                <div class="text-sm font-semibold text-red-700 mb-2">Impact:</div>
-                                <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>• Research programmes report enrollment bias toward higher socioeconomic populations</li>
-                                    <li>• Rural populations in US, Canada, Australia face systematic barriers</li>
-                                    <li>• Non-European populations underrepresented in reference databases</li>
+                <!-- Decision Story -->
+                <div class="card p-8 border-l-4 border-blue-500">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">How Our Intelligence Translates to Your Decisions</h3>
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <p class="text-gray-700 mb-4"><strong>Example:</strong> A Ministry of Health asks: "Should we start with a 50-condition panel or go straight to whole genome sequencing?"</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="font-semibold text-blue-700 mb-2">Within 3 weeks, we would:</h5>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">&#10003;</span>Analyse your existing laboratory capacity and workforce</li>
+                                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">&#10003;</span>Map population-prevalent conditions in your country</li>
+                                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">&#10003;</span>Cost both approaches against your budget constraints</li>
+                                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">&#10003;</span>Benchmark against 3 comparable countries</li>
                                 </ul>
                             </div>
+                            <div>
+                                <h5 class="font-semibold text-green-700 mb-2">And co-develop with your team:</h5>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li class="flex items-start gap-2"><span class="text-green-500 mt-1">&#10003;</span>Option A: Targeted panel with upgrade pathway</li>
+                                    <li class="flex items-start gap-2"><span class="text-green-500 mt-1">&#10003;</span>Option B: WGS pilot in selected sites</li>
+                                    <li class="flex items-start gap-2"><span class="text-green-500 mt-1">&#10003;</span>Option C: Hybrid approach (panel now, WGS in 5 years)</li>
+                                    <li class="flex items-start gap-2"><span class="text-green-500 mt-1">&#10003;</span>Decision matrix with your governance criteria</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-4">Our AI-powered intelligence platform analyses 520+ papers and 10 active programmes to provide this analysis faster and more comprehensively than traditional consulting - but the decisions remain yours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Your Journey Section -->
+        <section id="journey" class="section hidden bg-gray-100 py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Your Implementation Journey</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">What we will do with you, when. Each phase has specific deliverables, decision points, and governance milestones.</p>
+                </div>
+
+                <!-- Phase 0 -->
+                <div class="mb-8">
+                    <div class="phase-card border-gray-400">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center font-bold">0</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Situational Analysis & Stakeholder Mapping</h3>
+                                <p class="text-sm text-gray-500">Duration: 2-3 months | Typical cost: £8-15k</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Before any technical work, we map your starting point: existing infrastructure, policy environment, key stakeholders, and potential barriers.</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="font-semibold text-gray-700 mb-3">What We Deliver:</h5>
+                                <div class="space-y-2">
+                                    <div class="deliverable"><span class="text-gray-400">&#9679;</span><span class="text-sm">Landscape assessment of existing NBS infrastructure</span></div>
+                                    <div class="deliverable"><span class="text-gray-400">&#9679;</span><span class="text-sm">Stakeholder map with influence/interest analysis</span></div>
+                                    <div class="deliverable"><span class="text-gray-400">&#9679;</span><span class="text-sm">Regulatory and legal requirements summary</span></div>
+                                    <div class="deliverable"><span class="text-gray-400">&#9679;</span><span class="text-sm">International benchmark comparison (3 countries)</span></div>
+                                    <div class="deliverable"><span class="text-gray-400">&#9679;</span><span class="text-sm">Go/no-go recommendation with risk assessment</span></div>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-700 mb-3">Decisions You'll Be Ready to Make:</h5>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>&#8226; Should we proceed with genomic NBS?</li>
+                                    <li>&#8226; Which technology approach fits our context?</li>
+                                    <li>&#8226; Who needs to be at the table for pilot design?</li>
+                                    <li>&#8226; What are the political and financial constraints?</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 1 -->
+                <div class="mb-8">
+                    <div class="phase-card border-blue-500">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold">1</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Pilot Design</h3>
+                                <p class="text-sm text-gray-500">Duration: 6-12 months | Typical cost: £25-50k</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Co-design your pilot study protocol with our global evidence and your local expertise. We support ethics submission and technical committee approvals.</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="font-semibold text-blue-700 mb-3">What We Deliver:</h5>
+                                <div class="space-y-2">
+                                    <div class="deliverable"><span class="text-blue-400">&#9679;</span><span class="text-sm"><strong>Condition panel recommendation</strong> with evidence rationale</span></div>
+                                    <div class="deliverable"><span class="text-blue-400">&#9679;</span><span class="text-sm"><strong>Consent framework</strong> (culturally adapted, multi-language)</span></div>
+                                    <div class="deliverable"><span class="text-blue-400">&#9679;</span><span class="text-sm"><strong>Data flow architecture</strong> and IT requirements</span></div>
+                                    <div class="deliverable"><span class="text-blue-400">&#9679;</span><span class="text-sm"><strong>Ethics submission package</strong> with supporting evidence</span></div>
+                                    <div class="deliverable"><span class="text-blue-400">&#9679;</span><span class="text-sm"><strong>Pilot protocol document</strong> for technical committee</span></div>
+                                    <div class="deliverable"><span class="text-blue-400">&#9679;</span><span class="text-sm"><strong>Workforce requirements analysis</strong> with training plan</span></div>
+                                    <div class="deliverable"><span class="text-blue-400">&#9679;</span><span class="text-sm"><strong>Secondary findings policy</strong> (what to report, what not to)</span></div>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-blue-700 mb-3">Governance Support:</h5>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>&#8226; Technical committee briefings and Q&A</li>
+                                    <li>&#8226; Ethics board presentation support</li>
+                                    <li>&#8226; Finance ministry preliminary costing</li>
+                                    <li>&#8226; Public engagement strategy</li>
+                                </ul>
+                                <h5 class="font-semibold text-blue-700 mt-4 mb-3">Decision Points:</h5>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>&#8226; Final condition list approval</li>
+                                    <li>&#8226; Consent model sign-off</li>
+                                    <li>&#8226; Pilot site selection</li>
+                                    <li>&#8226; Budget allocation for pilot</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="mb-8">
+                    <div class="phase-card border-green-500">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold">2</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Pilot Implementation & Evaluation</h3>
+                                <p class="text-sm text-gray-500">Duration: 24-36 months | Retainer: £3-5k/month</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Ongoing advisory support during your pilot. We help troubleshoot operational issues, refine protocols based on real data, and prepare your evaluation.</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="font-semibold text-green-700 mb-3">What We Deliver:</h5>
+                                <div class="space-y-2">
+                                    <div class="deliverable"><span class="text-green-400">&#9679;</span><span class="text-sm"><strong>Operational SOPs</strong> for sample collection, sequencing, reporting</span></div>
+                                    <div class="deliverable"><span class="text-green-400">&#9679;</span><span class="text-sm"><strong>Training curriculum</strong> for midwives, lab staff, counsellors</span></div>
+                                    <div class="deliverable"><span class="text-green-400">&#9679;</span><span class="text-sm"><strong>Monitoring dashboard</strong> specifications</span></div>
+                                    <div class="deliverable"><span class="text-green-400">&#9679;</span><span class="text-sm"><strong>Protocol amendments</strong> based on pilot data</span></div>
+                                    <div class="deliverable"><span class="text-green-400">&#9679;</span><span class="text-sm"><strong>Equity monitoring reports</strong> (uptake by demographics)</span></div>
+                                    <div class="deliverable"><span class="text-green-400">&#9679;</span><span class="text-sm"><strong>Pilot evaluation framework</strong> and data collection tools</span></div>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-green-700 mb-3">Ongoing Support:</h5>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>&#8226; Monthly progress reviews with your team</li>
+                                    <li>&#8226; Troubleshooting calls for operational issues</li>
+                                    <li>&#8226; International peer learning connections</li>
+                                    <li>&#8226; Media and public communications support</li>
+                                </ul>
+                                <h5 class="font-semibold text-green-700 mt-4 mb-3">Evaluation Outputs:</h5>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>&#8226; Clinical outcomes summary</li>
+                                    <li>&#8226; Cost-effectiveness analysis</li>
+                                    <li>&#8226; Parental experience data</li>
+                                    <li>&#8226; Scale-up readiness assessment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="mb-8">
+                    <div class="phase-card border-purple-500">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold">3</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Scale-Up Planning & Business Case</h3>
+                                <p class="text-sm text-gray-500">Duration: 6-12 months | Typical cost: £40-75k</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Translate pilot evidence into a national business case that Finance Ministries and political leadership can approve.</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="font-semibold text-purple-700 mb-3">What We Deliver:</h5>
+                                <div class="space-y-2">
+                                    <div class="deliverable"><span class="text-purple-400">&#9679;</span><span class="text-sm"><strong>Costed business case</strong> with multi-year budget profile</span></div>
+                                    <div class="deliverable"><span class="text-purple-400">&#9679;</span><span class="text-sm"><strong>Options appraisal</strong> (full WGS vs. targeted panels vs. hybrid)</span></div>
+                                    <div class="deliverable"><span class="text-purple-400">&#9679;</span><span class="text-sm"><strong>Workforce scale-up plan</strong> with training pipeline</span></div>
+                                    <div class="deliverable"><span class="text-purple-400">&#9679;</span><span class="text-sm"><strong>IT infrastructure requirements</strong> for national rollout</span></div>
+                                    <div class="deliverable"><span class="text-purple-400">&#9679;</span><span class="text-sm"><strong>Legislative/regulatory changes</strong> needed (if any)</span></div>
+                                    <div class="deliverable"><span class="text-purple-400">&#9679;</span><span class="text-sm"><strong>Political narrative and risk management</strong> strategy</span></div>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-purple-700 mb-3">Governance Support:</h5>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>&#8226; Finance ministry briefing materials</li>
+                                    <li>&#8226; Cabinet/ministerial presentation support</li>
+                                    <li>&#8226; Media messaging for announcement</li>
+                                    <li>&#8226; FAQ document for parliamentary questions</li>
+                                </ul>
+                                <h5 class="font-semibold text-purple-700 mt-4 mb-3">How We Frame Uncertainty:</h5>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>&#8226; Honest communication of cost-effectiveness evidence</li>
+                                    <li>&#8226; Staged decision points to manage political risk</li>
+                                    <li>&#8226; Clear criteria for go/no-go at each stage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Visual -->
+                <div class="card p-8 mt-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Realistic Timeline: 5-7 Years from Feasibility to National Scale</h3>
+                    <div class="flex flex-wrap items-center justify-between gap-4 text-sm">
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center font-bold mx-auto mb-2">Y0-1</div>
+                            <div class="font-semibold">Feasibility</div>
+                        </div>
+                        <div class="text-gray-400 text-2xl hidden md:block">&rarr;</div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mx-auto mb-2">Y1-2</div>
+                            <div class="font-semibold">Pilot Design</div>
+                        </div>
+                        <div class="text-gray-400 text-2xl hidden md:block">&rarr;</div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold mx-auto mb-2">Y2-5</div>
+                            <div class="font-semibold">Pilot Running</div>
+                        </div>
+                        <div class="text-gray-400 text-2xl hidden md:block">&rarr;</div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold mx-auto mb-2">Y5-6</div>
+                            <div class="font-semibold">Business Case</div>
+                        </div>
+                        <div class="text-gray-400 text-2xl hidden md:block">&rarr;</div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center font-bold mx-auto mb-2">Y6+</div>
+                            <div class="font-semibold">National Rollout</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-6 text-center">Countries that rush this timeline face 3x higher failure rates. We help you move efficiently while building the evidence base needed for sustainable national programmes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Your Context Section -->
+        <section id="typology" class="section hidden py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Find Your Starting Point</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Every country starts from a different position. Our approach differs based on your existing infrastructure, resources, and policy environment.</p>
+                </div>
+
+                <!-- Country Typologies -->
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <!-- Type A -->
+                    <div class="card overflow-hidden">
+                        <div class="bg-blue-600 text-white p-4">
+                            <h3 class="text-lg font-bold">Type A: Established Screening + Advanced Genomics</h3>
+                            <p class="text-sm text-blue-100 mt-1">High-income with mature infrastructure</p>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-semibold text-gray-700 mb-3">Your Profile:</h4>
+                            <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                                <li>&#8226; Universal NBS already operational (30+ conditions)</li>
+                                <li>&#8226; Genomic laboratory network exists</li>
+                                <li>&#8226; Genetic counselling workforce in place</li>
+                                <li>&#8226; Considering WGS/WES expansion</li>
+                            </ul>
+                            <h4 class="font-semibold text-gray-700 mb-3">Examples:</h4>
+                            <p class="text-sm text-gray-600 mb-4">Netherlands, Belgium, Canada, Gulf States</p>
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-blue-700 mb-2">Your First 90 Days With Us:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>&#10003; Benchmark against UK Generation Study</li>
+                                    <li>&#10003; Condition panel optimization analysis</li>
+                                    <li>&#10003; Integration pathway with existing systems</li>
+                                    <li>&#10003; Consent framework adaptation</li>
+                                    <li>&#10003; Business case outline for expansion</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Type B -->
+                    <div class="card overflow-hidden">
+                        <div class="bg-green-600 text-white p-4">
+                            <h3 class="text-lg font-bold">Type B: Established Screening + Limited Genomics</h3>
+                            <p class="text-sm text-green-100 mt-1">Upper-middle income, building capacity</p>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-semibold text-gray-700 mb-3">Your Profile:</h4>
+                            <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                                <li>&#8226; Basic NBS operational (5-15 conditions)</li>
+                                <li>&#8226; Some genomic capacity (research or clinical)</li>
+                                <li>&#8226; Limited genetic counselling workforce</li>
+                                <li>&#8226; Considering targeted panel approach</li>
+                            </ul>
+                            <h4 class="font-semibold text-gray-700 mb-3">Examples:</h4>
+                            <p class="text-sm text-gray-600 mb-4">Brazil, Mexico, Thailand, South Africa, Turkey</p>
                             <div class="bg-green-50 rounded-lg p-4">
-                                <div class="text-sm font-semibold text-green-700 mb-2">Prevention:</div>
+                                <h4 class="font-semibold text-green-700 mb-2">Your First 90 Days With Us:</h4>
                                 <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>• Design universal access mechanisms from inception</li>
-                                    <li>• Monitor demographic representation continuously</li>
-                                    <li>• Require equity impact assessments in programme design</li>
+                                    <li>&#10003; Infrastructure gap analysis</li>
+                                    <li>&#10003; Population-specific condition prioritization</li>
+                                    <li>&#10003; Workforce development roadmap</li>
+                                    <li>&#10003; Technology options (panel vs. WES)</li>
+                                    <li>&#10003; Funding strategy (government + partners)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Type C -->
+                    <div class="card overflow-hidden">
+                        <div class="bg-orange-600 text-white p-4">
+                            <h3 class="text-lg font-bold">Type C: Basic or No Screening</h3>
+                            <p class="text-sm text-orange-100 mt-1">Lower-middle income, building from foundation</p>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-semibold text-gray-700 mb-3">Your Profile:</h4>
+                            <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                                <li>&#8226; Limited or no universal NBS currently</li>
+                                <li>&#8226; Minimal genomic infrastructure</li>
+                                <li>&#8226; Workforce needs significant development</li>
+                                <li>&#8226; May need to establish basic NBS first</li>
+                            </ul>
+                            <h4 class="font-semibold text-gray-700 mb-3">Examples:</h4>
+                            <p class="text-sm text-gray-600 mb-4">Peru, Colombia, Indonesia, Nigeria, Vietnam</p>
+                            <div class="bg-orange-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-orange-700 mb-2">Your First 90 Days With Us:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>&#10003; NBS landscape and feasibility assessment</li>
+                                    <li>&#10003; Condition burden analysis for your population</li>
+                                    <li>&#10003; Stepped pathway (basic NBS → genomic)</li>
+                                    <li>&#10003; Regional partnership opportunities</li>
+                                    <li>&#10003; Donor/development funding landscape</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Risk Mitigation -->
-                <div class="card p-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6">Implementation Readiness Checklist</h3>
-                    <p class="text-gray-600 mb-6">Countries should have these elements in place before initiating genomic newborn screening:</p>
+                <!-- Special Considerations -->
+                <div class="card p-8 mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">How We Adapt to Your Constraints</h3>
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
-                            <h4 class="font-semibold text-blue-700 mb-4">Prerequisites</h4>
-                            <ul class="space-y-3">
-                                <li class="flex items-center text-sm"><span class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0"></span>National genomics strategy exists</li>
-                                <li class="flex items-center text-sm"><span class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0"></span>Existing NBS infrastructure operational</li>
-                                <li class="flex items-center text-sm"><span class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0"></span>Genomic laboratory capacity available</li>
-                                <li class="flex items-center text-sm"><span class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0"></span>Genetic counseling workforce sufficient</li>
-                                <li class="flex items-center text-sm"><span class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0"></span>Data governance framework established</li>
-                                <li class="flex items-center text-sm"><span class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0"></span>Sustainable funding model secured</li>
+                            <h4 class="font-semibold text-gray-700 mb-4">Regulatory Context</h4>
+                            <ul class="text-sm text-gray-600 space-y-3">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 font-bold mt-0.5">&#8250;</span>
+                                    <span><strong>EU/UK-aligned:</strong> We help navigate CE-IVD, GDPR, NHS Digital standards</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 font-bold mt-0.5">&#8250;</span>
+                                    <span><strong>US-aligned:</strong> CLIA, FDA, HIPAA compliance pathways</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500 font-bold mt-0.5">&#8250;</span>
+                                    <span><strong>Emerging frameworks:</strong> Help develop fit-for-purpose regulations</span>
+                                </li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-green-700 mb-4">Governance Requirements</h4>
-                            <ul class="space-y-3">
-                                <li class="flex items-center text-sm"><span class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0"></span>Multi-stakeholder oversight committee</li>
-                                <li class="flex items-center text-sm"><span class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0"></span>Ethics review board approval</li>
-                                <li class="flex items-center text-sm"><span class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0"></span>Consent framework validated</li>
-                                <li class="flex items-center text-sm"><span class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0"></span>Secondary findings policy defined</li>
-                                <li class="flex items-center text-sm"><span class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0"></span>Quality assurance protocols established</li>
-                                <li class="flex items-center text-sm"><span class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0"></span>Equity monitoring plan in place</li>
+                            <h4 class="font-semibold text-gray-700 mb-4">Fiscal Reality</h4>
+                            <ul class="text-sm text-gray-600 space-y-3">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-500 font-bold mt-0.5">&#8250;</span>
+                                    <span><strong>Limited budget:</strong> Targeted 50-condition panels at £50-100/test</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-500 font-bold mt-0.5">&#8250;</span>
+                                    <span><strong>Moderate budget:</strong> WES at £200-400/test with prioritization</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-500 font-bold mt-0.5">&#8250;</span>
+                                    <span><strong>Donor-dependent:</strong> Sustainability planning from day one</span>
+                                </li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workforce & Equity -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="card p-8">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4">Workforce Planning Support</h3>
+                        <p class="text-gray-600 mb-4">We don't just identify workforce gaps - we help you close them.</p>
+                        <ul class="text-sm text-gray-600 space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
+                                <span><strong>Forecasting model</strong> aligned to screening volume targets</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
+                                <span><strong>Training curriculum</strong> for genetic counsellors, lab staff, midwives</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
+                                <span><strong>Competency frameworks</strong> adapted from international standards</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold flex-shrink-0">4</span>
+                                <span><strong>Critical ratio monitoring:</strong> 1 counsellor per 3,000 screened births</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card p-8">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4">Equity Strategy Support</h3>
+                        <p class="text-gray-600 mb-4">Equity must be built in from day one, not retrofitted.</p>
+                        <ul class="text-sm text-gray-600 space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
+                                <span><strong>Stakeholder mapping</strong> including underrepresented communities</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
+                                <span><strong>Co-design workshops</strong> with community representatives</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
+                                <span><strong>Culturally adapted consent</strong> materials in multiple languages</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-xs font-bold flex-shrink-0">4</span>
+                                <span><strong>Uptake monitoring dashboard</strong> by geography, ethnicity, income</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Section -->
+        <section id="deliverables" class="section hidden bg-gray-100 py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Concrete Deliverables</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Not just "reports." Here's exactly what you receive at each stage - policies, SOPs, frameworks, and tools you can use.</p>
+                </div>
+
+                <!-- Deliverable Categories -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <div class="card p-6">
+                        <div class="text-3xl mb-4">📋</div>
+                        <h4 class="font-bold text-gray-800 mb-2">Policy Documents</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>&#8226; Condition selection policy with evidence rationale</li>
+                            <li>&#8226; Secondary findings disclosure policy</li>
+                            <li>&#8226; Data governance and retention policy</li>
+                            <li>&#8226; Equity and access policy</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6">
+                        <div class="text-3xl mb-4">📝</div>
+                        <h4 class="font-bold text-gray-800 mb-2">Standard Operating Procedures</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>&#8226; Sample collection and transport SOPs</li>
+                            <li>&#8226; Laboratory processing SOPs</li>
+                            <li>&#8226; Result reporting and follow-up SOPs</li>
+                            <li>&#8226; Discordant result management SOP</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6">
+                        <div class="text-3xl mb-4">💰</div>
+                        <h4 class="font-bold text-gray-800 mb-2">Financial Products</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>&#8226; Multi-year costed budget model</li>
+                            <li>&#8226; Cost-effectiveness analysis (where evidence allows)</li>
+                            <li>&#8226; Options appraisal (panel vs. WES vs. WGS)</li>
+                            <li>&#8226; Finance ministry briefing pack</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6">
+                        <div class="text-3xl mb-4">👥</div>
+                        <h4 class="font-bold text-gray-800 mb-2">Workforce Products</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>&#8226; Workforce forecasting model</li>
+                            <li>&#8226; Training curriculum and materials</li>
+                            <li>&#8226; Competency frameworks</li>
+                            <li>&#8226; Provider knowledge assessment tools</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6">
+                        <div class="text-3xl mb-4">🗣️</div>
+                        <h4 class="font-bold text-gray-800 mb-2">Communications Products</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>&#8226; Public engagement strategy</li>
+                            <li>&#8226; Parent information materials (multi-language)</li>
+                            <li>&#8226; Media messaging and FAQ</li>
+                            <li>&#8226; Parliamentary briefing notes</li>
+                        </ul>
+                    </div>
+                    <div class="card p-6">
+                        <div class="text-3xl mb-4">📊</div>
+                        <h4 class="font-bold text-gray-800 mb-2">Monitoring & Evaluation</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>&#8226; KPI framework and dashboard specifications</li>
+                            <li>&#8226; Equity monitoring tools</li>
+                            <li>&#8226; Evaluation protocol and data collection</li>
+                            <li>&#8226; Pilot evaluation report</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Governance Support -->
+                <div class="card p-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Governance Process Support</h3>
+                    <p class="text-gray-600 mb-6">We don't just deliver documents - we support you through national governance processes:</p>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-2xl mx-auto mb-3">🏛️</div>
+                            <h5 class="font-semibold text-gray-800 mb-2">Technical Committees</h5>
+                            <p class="text-sm text-gray-600">Briefings, Q&A support, evidence summaries</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-2xl mx-auto mb-3">⚖️</div>
+                            <h5 class="font-semibold text-gray-800 mb-2">Ethics Boards</h5>
+                            <p class="text-sm text-gray-600">Submission packages, response to queries</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-2xl mx-auto mb-3">💵</div>
+                            <h5 class="font-semibold text-gray-800 mb-2">Finance Ministry</h5>
+                            <p class="text-sm text-gray-600">Business case, cost modelling, value case</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center text-2xl mx-auto mb-3">🎤</div>
+                            <h5 class="font-semibold text-gray-800 mb-2">Cabinet/Ministers</h5>
+                            <p class="text-sm text-gray-600">Presentations, political narrative, risk framing</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section hidden gradient-hero text-white py-16">
+        <!-- Engage Section -->
+        <section id="engage" class="section hidden gradient-hero text-white py-16">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-4">Engage GENEQ Global</h2>
-                    <p class="text-blue-200 max-w-2xl mx-auto">Get evidence-based intelligence and implementation support for your genomic newborn screening programme.</p>
+                    <h2 class="text-3xl font-bold mb-4">Work With Us</h2>
+                    <p class="text-blue-200 max-w-3xl mx-auto">Choose the engagement that matches your stage. We can start small and expand as you progress through the implementation journey.</p>
                 </div>
 
-                <!-- Service Tiers -->
-                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+                <!-- Engagement Options Aligned to Journey -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                     <div class="bg-white/10 backdrop-blur rounded-xl p-6">
-                        <div class="text-blue-300 font-semibold text-sm mb-2">RAPID ASSESSMENT</div>
-                        <div class="text-3xl font-bold mb-4">£8-12k</div>
-                        <ul class="text-sm text-blue-100 space-y-2 mb-6">
-                            <li>• Country landscape analysis</li>
-                            <li>• 3 international benchmark comparisons</li>
-                            <li>• Implementation readiness scorecard</li>
-                            <li>• Risk assessment summary</li>
+                        <div class="text-blue-300 text-sm font-semibold mb-2">STAGE 0</div>
+                        <h3 class="text-xl font-bold mb-2">Pre-Feasibility</h3>
+                        <div class="text-3xl font-bold mb-4">£8-15k</div>
+                        <ul class="text-sm text-blue-100 space-y-2 mb-4">
+                            <li>&#8226; Situational analysis</li>
+                            <li>&#8226; Stakeholder mapping</li>
+                            <li>&#8226; Options appraisal</li>
+                            <li>&#8226; Go/no-go recommendation</li>
                         </ul>
-                        <div class="text-xs text-blue-300">2-week delivery</div>
+                        <div class="text-xs text-blue-300 mb-4">2-3 months</div>
+                        <p class="text-xs text-blue-200 italic">Best for: Countries exploring whether to pursue genomic NBS</p>
                     </div>
                     <div class="bg-white/20 backdrop-blur rounded-xl p-6 border-2 border-blue-400">
-                        <div class="text-blue-300 font-semibold text-sm mb-2">FULL ANALYSIS</div>
-                        <div class="text-3xl font-bold mb-4">£18-25k</div>
-                        <ul class="text-sm text-blue-100 space-y-2 mb-6">
-                            <li>• Comprehensive intelligence report</li>
-                            <li>• Implementation roadmap</li>
-                            <li>• Technology recommendations</li>
-                            <li>• Stakeholder engagement plan</li>
-                            <li>• Workforce requirements analysis</li>
+                        <div class="text-blue-300 text-sm font-semibold mb-2">STAGE 1</div>
+                        <h3 class="text-xl font-bold mb-2">Pilot Design</h3>
+                        <div class="text-3xl font-bold mb-4">£25-50k</div>
+                        <ul class="text-sm text-blue-100 space-y-2 mb-4">
+                            <li>&#8226; Full pilot protocol</li>
+                            <li>&#8226; Condition panel & consent</li>
+                            <li>&#8226; Ethics submission support</li>
+                            <li>&#8226; Workforce plan</li>
                         </ul>
-                        <div class="text-xs text-blue-300">4-week delivery</div>
+                        <div class="text-xs text-blue-300 mb-4">6-12 months</div>
+                        <p class="text-xs text-blue-200 italic">Best for: Countries ready to design a pilot study</p>
                     </div>
                     <div class="bg-white/10 backdrop-blur rounded-xl p-6">
-                        <div class="text-blue-300 font-semibold text-sm mb-2">PROGRAMME DESIGN</div>
-                        <div class="text-3xl font-bold mb-4">£45-75k</div>
-                        <ul class="text-sm text-blue-100 space-y-2 mb-6">
-                            <li>• Full framework deployment</li>
-                            <li>• Stakeholder workshops</li>
-                            <li>• Policy documentation</li>
-                            <li>• Governance structure design</li>
-                            <li>• Ongoing advisory support</li>
+                        <div class="text-blue-300 text-sm font-semibold mb-2">STAGE 2</div>
+                        <h3 class="text-xl font-bold mb-2">Implementation Advisory</h3>
+                        <div class="text-3xl font-bold mb-4">£3-5k/mo</div>
+                        <ul class="text-sm text-blue-100 space-y-2 mb-4">
+                            <li>&#8226; Monthly progress reviews</li>
+                            <li>&#8226; Troubleshooting support</li>
+                            <li>&#8226; Protocol refinement</li>
+                            <li>&#8226; Evaluation support</li>
                         </ul>
-                        <div class="text-xs text-blue-300">3-month engagement</div>
+                        <div class="text-xs text-blue-300 mb-4">24-36 months (pilot duration)</div>
+                        <p class="text-xs text-blue-200 italic">Best for: Countries with pilots in progress</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-xl p-6">
+                        <div class="text-blue-300 text-sm font-semibold mb-2">STAGE 3</div>
+                        <h3 class="text-xl font-bold mb-2">Scale-Up Planning</h3>
+                        <div class="text-3xl font-bold mb-4">£40-75k</div>
+                        <ul class="text-sm text-blue-100 space-y-2 mb-4">
+                            <li>&#8226; Costed business case</li>
+                            <li>&#8226; National rollout plan</li>
+                            <li>&#8226; Political strategy</li>
+                            <li>&#8226; Finance ministry support</li>
+                        </ul>
+                        <div class="text-xs text-blue-300 mb-4">6-12 months</div>
+                        <p class="text-xs text-blue-200 italic">Best for: Countries with pilot data ready for scale decision</p>
+                    </div>
+                </div>
+
+                <!-- Ethics Statement -->
+                <div class="bg-white/10 backdrop-blur rounded-xl p-8 mb-12 max-w-4xl mx-auto">
+                    <h3 class="text-xl font-bold mb-4">Our Ethics & Public Interest Commitment</h3>
+                    <div class="grid md:grid-cols-2 gap-6 text-sm text-blue-100">
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">We align with:</h4>
+                            <ul class="space-y-2">
+                                <li>&#8226; WHO guidance on genomics and public health</li>
+                                <li>&#8226; National sovereignty over health policy decisions</li>
+                                <li>&#8226; Community norms and cultural contexts</li>
+                                <li>&#8226; Wilson & Jungner screening criteria (adapted)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">When we disagree:</h4>
+                            <ul class="space-y-2">
+                                <li>&#8226; We present transparent options with pros/cons</li>
+                                <li>&#8226; We never give single-track recommendations</li>
+                                <li>&#8226; Final decisions rest with national authorities</li>
+                                <li>&#8226; We document uncertainty honestly</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -679,9 +769,9 @@
                 <!-- CTA -->
                 <div class="text-center">
                     <div class="bg-white/10 backdrop-blur rounded-xl p-8 max-w-xl mx-auto">
-                        <h4 class="font-semibold text-xl mb-3">Request Your Country Analysis</h4>
-                        <p class="text-sm text-blue-100 mb-6">Get a customized assessment of implementation readiness for your healthcare context.</p>
-                        <a href="mailto:manuel@geneqglobal.com?subject=GENEQ Country Analysis Request" class="inline-block px-8 py-3 bg-white text-blue-700 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                        <h4 class="font-semibold text-xl mb-3">Start the Conversation</h4>
+                        <p class="text-sm text-blue-100 mb-6">Tell us about your country's current situation and goals. We'll suggest the right starting point for your journey.</p>
+                        <a href="mailto:manuel@geneqglobal.com?subject=GENEQ%20Consultation%20Request&body=Country:%0ACurrently%20at%20stage:%0AGoals:%0A" class="inline-block px-8 py-3 bg-white text-blue-700 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
                             Contact Us
                         </a>
                     </div>
@@ -701,7 +791,7 @@
                     <p class="text-gray-400 text-sm">Advancing Health Equity Through Genomics</p>
                 </div>
                 <div class="text-right text-sm text-gray-500">
-                    <p>Intelligence base: 520 papers | 25+ countries | 47 verified sources</p>
+                    <p>Evidence base: 520 papers | 25+ countries | 10 active programmes</p>
                     <p>Last updated: January 2026</p>
                 </div>
             </div>
